@@ -1,36 +1,36 @@
-// Simple TUI Dashboard for BlindSwarm
-// This is a placeholder that outputs to console
-// In production, this would use Ink (React for CLI)
-
 export interface TaskProgress {
   taskId: string;
   status: string;
-  steps: {
-    index: number;
-    agentId: string | null;
-    status: string;
-  }[];
+  steps: Array<{ index: number; status: string; agent?: string }>;
+  logs: string[];
 }
+
+export type { TaskStep } from '../types/index.js';
 
 export class Dashboard {
   private running: boolean = false;
 
   async render(): Promise<void> {
     this.running = true;
-    this.printHeader();
-    this.printDemoView();
-  }
-
-  private printHeader(): void {
     console.log('\n');
     console.log('╔════════════════════════════════════════════════════════════╗');
     console.log('║          BlindSwarm - Multi-Agent Orchestration            ║');
-    console.log('║              Privacy-Preserving AI Protocol                ║');
+    console.log('║              Privacy-Preserving AI Protocol               ║');
     console.log('╚════════════════════════════════════════════════════════════╝');
     console.log('\n');
   }
 
-  private printDemoView(): void {
+  update(progress: Partial<TaskProgress>): void {
+    if (!this.running) return;
+    
+    console.clear();
+    console.log('\n');
+    console.log('╔════════════════════════════════════════════════════════════╗');
+    console.log('║          BlindSwarm - Multi-Agent Orchestration            ║');
+    console.log('║              Privacy-Preserving AI Protocol               ║');
+    console.log('╚════════════════════════════════════════════════════════════╝');
+    console.log('\n');
+
     console.log('┌─────────────────────────────────────────────────────────────┐');
     console.log('│                    3-AGENT DEMO VIEW                        │');
     console.log('├─────────────────────────────────────────────────────────────┤');
@@ -41,18 +41,22 @@ export class Dashboard {
     console.log('│  │ Analysis     │    │ Analysis     │    │ Decision     │  │');
     console.log('│  └──────────────┘    └──────────────┘    └──────────────┘  │');
     console.log('│                                                             │');
-    console.log('│  Status: ● RUNNING    Step: 1/3    Progress: ████░░ 66%   │');
+    
+    const status = progress.status || 'RUNNING';
+    const step = progress.steps?.filter(s => s.status === 'completed').length || 0;
+    const progressBar = '█'.repeat(step) + '░'.repeat(3 - step);
+    console.log(`│  Status: ● ${status.padEnd(9)} Step: ${step}/3   Progress: ${progressBar} ${Math.round(step/3*100)}%   │`);
     console.log('│                                                             │');
     console.log('└─────────────────────────────────────────────────────────────┘');
-    console.log('\n');
+    
+    if (progress.logs && progress.logs.length > 0) {
+      console.log('\nRecent logs:');
+      progress.logs.slice(-5).forEach(log => console.log(`  ${log}`));
+    }
   }
 
-  update(progress: TaskProgress): void {
-    if (!this.running) return;
-    console.clear();
-    this.printHeader();
-    this.printDemoView();
-    console.log('Task:', progress.taskId, 'Status:', progress.status);
+  addLog(log: string): void {
+    console.log(`  ${log}`);
   }
 
   stop(): void {

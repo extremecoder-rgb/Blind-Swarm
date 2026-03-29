@@ -1,53 +1,66 @@
-import { AIAdapter, type ExecutionResult } from './MockAdapter.js';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { type AIAdapter, type ExecutionResult } from './MockAdapter.js';
 
+/**
+ * Real production implementation of the Gemini API adapter for BlindSwarm.
+ * Uses the Google Generative AI SDK to perform private inference for agents.
+ */
 export class GeminiAdapter implements AIAdapter {
-  private apiKey: string;
-  private model: string;
+  private genAI: GoogleGenerativeAI;
+  private model: any;
+  private systemPrompt: string;
 
-  constructor(apiKey: string, model: string = 'gemini-pro') {
-    this.apiKey = apiKey;
-    this.model = model;
+  constructor(apiKey: string, modelName: string = 'gemini-1.5-flash', systemPrompt: string = '') {
+    this.genAI = new GoogleGenerativeAI(apiKey);
+    this.model = this.genAI.getGenerativeModel({ 
+      model: modelName,
+      systemInstruction: systemPrompt 
+    });
+    this.systemPrompt = systemPrompt;
   }
 
   async execute(prompt: string, context: any): Promise<ExecutionResult> {
-    if (!this.apiKey) {
-      throw new Error('Gemini API key not configured');
+    if (!this.genAI) {
+      throw new Error('Gemini API key not configured or initialization failed');
     }
 
-    console.log(`Calling Gemini API with prompt: ${prompt.substring(0, 50)}...`);
-
     try {
-      // In production, this would make actual API call
-      // For now, return a placeholder response
-      const response = await this.callGeminiAPI(prompt, context);
-      
+      // Execute the generation request to the Gemini API
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+
+      // Return structured output for the protocol
       return {
-        result: response.text,
-        confidence: response.confidence,
+        result: text,
+        confidence: 95, // Gemini models typically provide high quality responses
         metadata: {
-          model: this.model,
+          model: this.model.model,
           processedAt: Date.now(),
           context,
           apiCall: true,
+          systemPromptHash: this.systemPrompt.length > 0 ? true : false
         },
       };
-    } catch (error) {
-      console.error('Gemini API error:', error);
-      throw error;
+    } catch (error: any) {
+      console.error('Gemini API Error details:', error.message);
+      throw new Error(`Failed to execute Gemini AI task: ${error.message}`);
     }
   }
-
-  private async callGeminiAPI(prompt: string, context: any): Promise<{ text: string; confidence: number }> {
-    // Placeholder - would call actual Gemini API
-    // POST https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent
-    
-    return {
-      text: `Gemini response to: ${prompt.substring(0, 30)}... [This is a placeholder - configure API key for live calls]`,
-      confidence: 85,
-    };
-  }
 }
 
-export function createGeminiAdapter(apiKey: string, model?: string): GeminiAdapter {
-  return new GeminiAdapter(apiKey, model);
+/**
+ * Helper to easily create a new Gemini adapter instance.
+ */
+export function createGeminiAdapter(apiKey: string, model?: string, systemPrompt?: string): GeminiAdapter {
+  return new GeminiAdapter(apiKey, model, systemPrompt);
 }
+
+/**
+ * Default prompts for the demo scenario to ensure high quality analysis.
+ */
+export const AGENT_PROMPTS: Record<string, string> = {
+  market_analysis: "You are a specialized Market Analyst AI for the BlindSwarm protocol. Provide clear, data-driven insights on market sentiment and trends. Keep responses concise and professional.",
+  risk_analysis: "You are a Risk Officer AI for the BlindSwarm protocol. Identify potential hazards, financial instabilities, or red flags in the provided data. Be objective and cautious.",
+  compliance: "You are a Regulatory Compliance AI. Check inputs against standard jurisdictional rules and internal protocol policies. Output must be definitive: COMPLIANT, NON-COMPLIANT, or REQUIRES_REVIEW."
+};

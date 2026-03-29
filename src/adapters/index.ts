@@ -1,6 +1,6 @@
-import { MockAdapter, createMockAdapter, type ExecutionResult } from './MockAdapter.js';
-import { GeminiAdapter, createGeminiAdapter } from './GeminiAdapter.js';
+import { MockAdapter, createMockAdapter, type ExecutionResult, type AIAdapter } from './MockAdapter.js';
+import { GeminiAdapter, createGeminiAdapter, AGENT_PROMPTS } from './GeminiAdapter.js';
 
-export { MockAdapter, GeminiAdapter };
+export { MockAdapter, GeminiAdapter, AGENT_PROMPTS };
 export { createMockAdapter, createGeminiAdapter };
-export type { AIAdapter, ExecutionResult } from './MockAdapter.js';
+export type { AIAdapter, ExecutionResult };

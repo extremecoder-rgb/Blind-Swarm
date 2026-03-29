@@ -10,7 +10,8 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "jsx": "react-jsx"
   },
   "include": ["src/**/*", "contracts/**/*"],
   "exclude": ["node_modules", "dist"]

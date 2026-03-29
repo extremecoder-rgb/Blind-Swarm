@@ -1,16 +1,21 @@
 {
   "name": "blindswarm",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Privacy-preserving multi-agent AI orchestration protocol on Midnight Network",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "type": "module",
   "bin": {
-    "blindswarm": "./dist/cli/index.js"
+    "blindswarm": "./bin/blindswarm.js"
   },
   "scripts": {
     "build": "tsc",
     "test": "echo \"No tests yet\"",
     "typecheck": "tsc --noEmit",
+    "demo": "node dist/src/demo/index.js",
+    "demo:local": "node dist/src/demo/local-demo.js",
+    "demo:mock": "node -e \"import('./dist/src/demo/index.js').then(m => m.runDemo({useMockAI: true, showTUI: true}))\"",
+    "start-proof-server": "docker run -p 6300:6300 midnightntwrk/proof-server:latest midnight-proof-server -v",
+    "link": "npm run build && npm link",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -24,13 +29,24 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@noble/ed25519": "^2.1.0",
+    "@noble/hashes": "^1.8.0",
     "canonical-json": "^0.1.0",
     "classic-level": "^3.0.0",
     "commander": "^11.0.0",
+    "dotenv": "^16.4.0",
+    "ink": "^4.0.0",
+    "react": "^18.2.0",
+    "rxjs": "^7.8.0",
+    "ws": "^8.19.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/ws": "^8.18.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.3.0"
   }
 }
