@@ -105,10 +105,10 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Smart Contracts & Core Backend | 0/3 | Not started | - |
-| 2. Agent Runtime & AI Integration | 0/1 | Not started | - |
-| 3. CLI & TUI | 0/1 | Not started | - |
-| 4. Demo | 0/1 | Not started | - |
+| 1. Smart Contracts & Core Backend | 3/3 | ✓ Complete | 2026-03-29 |
+| 2. Agent Runtime & AI Integration | 1/1 | ✓ Complete | 2026-03-29 |
+| 3. CLI & TUI | 1/1 | ✓ Complete | 2026-03-29 |
+| 4. Demo | 1/1 | ✓ Complete | 2026-03-29 |
 
 ---
 

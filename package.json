@@ -1,0 +1,36 @@
+{
+  "name": "blindswarm",
+  "version": "0.1.0",
+  "description": "Privacy-preserving multi-agent AI orchestration protocol on Midnight Network",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "blindswarm": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "midnight",
+    "blockchain",
+    "ai",
+    "agents",
+    "orchestration",
+    "privacy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "canonical-json": "^0.1.0",
+    "classic-level": "^3.0.0",
+    "commander": "^11.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
