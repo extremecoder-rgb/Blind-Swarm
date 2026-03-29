@@ -83,39 +83,39 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CONT-01 | Phase 1 | Pending |
-| CONT-02 | Phase 1 | Pending |
-| CONT-03 | Phase 1 | Pending |
-| CONT-04 | Phase 1 | Pending |
-| CONT-05 | Phase 1 | Pending |
-| CONT-06 | Phase 1 | Pending |
-| CONT-07 | Phase 1 | Pending |
-| CONT-08 | Phase 1 | Pending |
-| CONT-09 | Phase 1 | Pending |
-| CONT-10 | Phase 1 | Pending |
-| BACK-01 | Phase 1 | Pending |
-| BACK-02 | Phase 1 | Pending |
-| BACK-03 | Phase 1 | Pending |
-| BACK-04 | Phase 1 | Pending |
-| BACK-05 | Phase 2 | Pending |
-| BACK-06 | Phase 2 | Pending |
-| BACK-07 | Phase 1 | Pending |
-| BACK-08 | Phase 1 | Pending |
-| BACK-09 | Phase 1 | Pending |
-| BACK-10 | Phase 1 | Pending |
-| ORCH-01 | Phase 1 | Pending |
-| ORCH-02 | Phase 1 | Pending |
-| ORCH-03 | Phase 1 | Pending |
-| CLI-01 | Phase 2 | Pending |
-| CLI-02 | Phase 2 | Pending |
-| CLI-03 | Phase 2 | Pending |
-| CLI-04 | Phase 2 | Pending |
-| TUI-01 | Phase 2 | Pending |
-| TUI-02 | Phase 2 | Pending |
-| TUI-03 | Phase 2 | Pending |
-| DEMO-01 | Phase 2 | Pending |
-| DEMO-02 | Phase 2 | Pending |
-| DEMO-03 | Phase 2 | Pending |
+| CONT-01 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-02 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-03 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-04 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-05 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-06 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-07 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-08 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-09 | Phase 1: Smart Contracts & Core Backend | Pending |
+| CONT-10 | Phase 1: Smart Contracts & Core Backend | Pending |
+| BACK-01 | Phase 1: Smart Contracts & Core Backend | Pending |
+| BACK-02 | Phase 1: Smart Contracts & Core Backend | Pending |
+| BACK-03 | Phase 2: Agent Runtime & AI Integration | Pending |
+| BACK-04 | Phase 2: Agent Runtime & AI Integration | Pending |
+| BACK-05 | Phase 2: Agent Runtime & AI Integration | Pending |
+| BACK-06 | Phase 2: Agent Runtime & AI Integration | Pending |
+| BACK-07 | Phase 1: Smart Contracts & Core Backend | Pending |
+| BACK-08 | Phase 1: Smart Contracts & Core Backend | Pending |
+| BACK-09 | Phase 1: Smart Contracts & Core Backend | Pending |
+| BACK-10 | Phase 1: Smart Contracts & Core Backend | Pending |
+| ORCH-01 | Phase 1: Smart Contracts & Core Backend | Pending |
+| ORCH-02 | Phase 1: Smart Contracts & Core Backend | Pending |
+| ORCH-03 | Phase 2: Agent Runtime & AI Integration | Pending |
+| CLI-01 | Phase 3: CLI & TUI | Pending |
+| CLI-02 | Phase 3: CLI & TUI | Pending |
+| CLI-03 | Phase 3: CLI & TUI | Pending |
+| CLI-04 | Phase 3: CLI & TUI | Pending |
+| TUI-01 | Phase 3: CLI & TUI | Pending |
+| TUI-02 | Phase 3: CLI & TUI | Pending |
+| TUI-03 | Phase 3: CLI & TUI | Pending |
+| DEMO-01 | Phase 4: Demo | Pending |
+| DEMO-02 | Phase 4: Demo | Pending |
+| DEMO-03 | Phase 4: Demo | Pending |
 
 **Coverage:**
 - v1 requirements: 33 total
