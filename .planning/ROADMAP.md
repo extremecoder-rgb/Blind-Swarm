@@ -36,7 +36,7 @@
 10. Cryptographic utilities (deterministic JSON, SHA256, Ed25519 verification) produce consistent, verifiable outputs
 11. Persistent storage correctly saves and retrieves tasks, encrypted outputs, and configuration
 
-**Plans:** TBD
+**Plans:** 3 plans (01-01, 01-02, 01-03)
 
 ---
 
@@ -105,7 +105,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Smart Contracts & Core Backend | 0/1 | Not started | - |
+| 1. Smart Contracts & Core Backend | 0/3 | Not started | - |
 | 2. Agent Runtime & AI Integration | 0/1 | Not started | - |
 | 3. CLI & TUI | 0/1 | Not started | - |
 | 4. Demo | 0/1 | Not started | - |
