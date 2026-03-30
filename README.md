@@ -5,9 +5,11 @@
 A hackathon-ready implementation featuring:
 - 🔐 **Real Ed25519 Cryptographic Signatures** - Each agent has real keypairs
 - 🔒 **ECDH Encryption** - End-to-end encrypted agent communication
-- 🤖 **Gemini 2.5 Flash Integration** - Live AI for Market/Risk/Compliance analysis
+- 🤖 **Gemini 1.5 Flash Integration** - Live AI for Market/Risk/Compliance analysis
 - ⛓️ **Midnight Network Ready** - Can deploy to testnet with real ZK proofs
-- 📊 **Live TUI Dashboard** - Beautiful terminal visualization
+- 📊 **Luminance Studio Web Dashboard** - Beautiful React/Vite visualization
+- 🖥️ **Live TUI Dashboard** - Optional terminal visualization for CLI users
+- 🌐 **Express & WebSocket API** - Real-time orchestration updates via socket stream
 
 ## Quick Start
 
@@ -18,10 +20,18 @@ npm install
 # Build
 npm run build
 
-# Run demo (mock AI)
-npm run demo
+# Option 1: Run with Web Dashboard (Recommended)
+# Terminal 1: Backend Server
+npm run start:server
 
-# Or run with Gemini AI
+# Terminal 2: Frontend Dashboard
+cd frontend
+npm install
+npm run dev
+
+# Option 2: CLI Demo
+# Build and run the TUI version
+npm run build
 npm run demo
 ```
 
@@ -119,7 +129,13 @@ blindswarm/
 │   ├── midnight/       # SDK utilities
 │   ├── orchestrator/   # DAG validation, escrow
 │   ├── storage/        # Persistent storage
-│   └── tui/           # Terminal dashboard
+│   ├── tui/           # Terminal dashboard
+│   ├── types/          # Shared type definitions
+│   └── server.ts       # Backend API & WebSocket Server
+├── frontend/           # Luminance Studio React/Vite App
+│   ├── src/
+│   │   ├── App.tsx     # Dashboard logic
+│   │   └── index.css   # Premium design system
 ├── .env               # API keys
 └── package.json
 ```

@@ -90,7 +90,7 @@ export class DemoRunner {
             if (useGemini) {
                 try {
                     const systemPrompt = AGENT_PROMPTS[assignedAgent.capability] || '';
-                    adapter = createGeminiAdapter(this.config.geminiApiKey, 'gemini-2.0-flash', systemPrompt);
+                    adapter = createGeminiAdapter(this.config.geminiApiKey, 'gemini-2.5-flash', systemPrompt);
                     aiResult = await adapter.execute(step.description, { taskId: taskResult.taskId });
                 }
                 catch (e) {

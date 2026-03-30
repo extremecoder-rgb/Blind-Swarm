@@ -11,6 +11,7 @@ export interface DemoConfig {
   useMockAI: boolean;
   showTUI: boolean;
   geminiApiKey?: string;
+  onUpdate?: (state: any) => void;
 }
 
 export class DemoRunner {
@@ -28,6 +29,9 @@ export class DemoRunner {
       this.dashboard.update({ logs: this.logs });
     } else {
       console.log(`[DEMO] ${msg}`);
+    }
+    if (this.config.onUpdate) {
+      this.config.onUpdate({ logs: this.logs });
     }
   }
 
@@ -90,6 +94,9 @@ export class DemoRunner {
     if (this.dashboard) {
       this.dashboard.update({ taskId: taskResult.taskId, status: 'EXECUTING', steps });
     }
+    if (this.config.onUpdate) {
+      this.config.onUpdate({ taskId: taskResult.taskId, status: 'EXECUTING', steps });
+    }
 
     // Protocol Loop
     for (const stepIndex of scenario.dag.steps.map(s => s.index)) {
@@ -103,6 +110,7 @@ export class DemoRunner {
       steps[stepIndex].status = 'assigned';
       steps[stepIndex].agentId = assignedAgent.registeredId;
       if (this.dashboard) this.dashboard.update({ steps });
+      if (this.config.onUpdate) this.config.onUpdate({ steps });
 
       // Private AI Execution
       this.addLog(`Agent ${assignedAgent.name} performing private ${assignedAgent.capability} task...`);
@@ -112,7 +120,7 @@ export class DemoRunner {
       if (useGemini) {
         try {
           const systemPrompt = AGENT_PROMPTS[assignedAgent.capability] || '';
-          adapter = createGeminiAdapter(this.config.geminiApiKey!, 'gemini-2.0-flash', systemPrompt);
+          adapter = createGeminiAdapter(this.config.geminiApiKey!, 'gemini-2.5-flash', systemPrompt);
           aiResult = await adapter.execute(step.description, { taskId: taskResult.taskId });
         } catch (e) {
           this.addLog(`Gemini API failed (quota?), using mock adapter: ${(e as Error).message.slice(0, 50)}`);
@@ -140,11 +148,13 @@ export class DemoRunner {
 
       steps[stepIndex].status = 'completed';
       if (this.dashboard) this.dashboard.update({ steps });
+      if (this.config.onUpdate) this.config.onUpdate({ steps });
       this.addLog(`On-chain state updated for step ${stepIndex + 1}.`);
     }
 
     this.addLog('══════════ DEMO SUCCESSFUL: PROOF OF WORKFLOW VERIFIED ══════════');
     if (this.dashboard) this.dashboard.update({ status: 'COMPLETED' });
+    if (this.config.onUpdate) this.config.onUpdate({ status: 'COMPLETED' });
     
     // Wait for user to read
     await new Promise(r => setTimeout(r, 5000));
@@ -160,6 +170,7 @@ export async function runDemo(config?: Partial<DemoConfig>): Promise<void> {
     useMockAI: config?.useMockAI ?? (process.env.GEMINI_API_KEY ? false : true),
     showTUI: config?.showTUI ?? true,
     geminiApiKey: process.env.GEMINI_API_KEY,
+    onUpdate: config?.onUpdate,
   });
   await runner.run();
 }

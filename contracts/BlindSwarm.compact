@@ -1,0 +1,69 @@
+import { Uint64, Bytes, Map, Address, PublicKey, Signature, check_signature } from "@midnight-ntwrk/compact-runtime";
+
+// State structures
+export struct Agent {
+    owner: Address;
+    capabilities: Bytes<64>;
+    stake: Uint64;
+    reputation: Uint64;
+}
+
+export struct Task {
+    owner: Address;
+    escrow: Uint64;
+    deadline: Uint64;
+    is_completed: bool;
+}
+
+export struct StepAttestation {
+    agent_id: Address;
+    output_hash: Bytes<32>;
+}
+
+// Global State
+export ledger agents: Map<Address, Agent>;
+export ledger tasks: Map<Bytes<16>, Task>;
+export ledger attestations: Map<Bytes<48>, StepAttestation>; // key: taskId + stepIndex
+
+// Circuits
+export circuit register_agent(capabilities: Bytes<64>, stake: Uint64): void {
+    const sender = transaction_author();
+    agents.insert(sender, Agent {
+        owner: sender,
+        capabilities: capabilities,
+        stake: stake,
+        reputation: 100
+    });
+}
+
+export circuit create_task(task_id: Bytes<16>, escrow: Uint64, deadline: Uint64): void {
+    const sender = transaction_author();
+    // In a real contract, we would handle the DUST transfer here
+    tasks.insert(task_id, Task {
+        owner: sender,
+        escrow: escrow,
+        deadline: deadline,
+        is_completed: false
+    });
+}
+
+export circuit submit_attestation(
+    task_id: Bytes<16>, 
+    step_index: Uint64, 
+    agent_pk: PublicKey,
+    signature: Signature,
+    output_hash: Bytes<32>
+): void {
+    // 1. Verify the signature of the agent on the task/step/hash
+    // This ensures ONLY the assigned agent could have submitted this
+    const message = task_id.concat(step_index.to_bytes()).concat(output_hash);
+    if (!check_signature(agent_pk, message, signature)) {
+        throw "Invalid attestation signature";
+    }
+
+    const key = task_id.concat(step_index.to_bytes());
+    attestations.insert(key, StepAttestation {
+        agent_id: transaction_author(),
+        output_hash: output_hash
+    });
+}
