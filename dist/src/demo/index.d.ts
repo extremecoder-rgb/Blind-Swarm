@@ -1,7 +1,7 @@
 export interface DemoConfig {
-    useMockAI: boolean;
     showTUI: boolean;
-    geminiApiKey?: string;
+    geminiApiKey: string;
+    onUpdate?: (state: any) => void;
 }
 export declare class DemoRunner {
     private config;

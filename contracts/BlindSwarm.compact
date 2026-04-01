@@ -1,69 +1,79 @@
-import { Uint64, Bytes, Map, Address, PublicKey, Signature, check_signature } from "@midnight-ntwrk/compact-runtime";
+pragma language_version 0.22.0;
+
+import CompactStandardLibrary;
 
 // State structures
 export struct Agent {
-    owner: Address;
+    owner: Bytes<32>;
     capabilities: Bytes<64>;
-    stake: Uint64;
-    reputation: Uint64;
+    stake: Uint<64>;
+    reputation: Uint<64>;
 }
 
 export struct Task {
-    owner: Address;
-    escrow: Uint64;
-    deadline: Uint64;
-    is_completed: bool;
+    owner: Bytes<32>;
+    escrow: Uint<64>;
+    deadline: Uint<64>;
+    is_completed: Boolean;
 }
 
 export struct StepAttestation {
-    agent_id: Address;
+    agent_id: Bytes<32>;
     output_hash: Bytes<32>;
 }
 
 // Global State
-export ledger agents: Map<Address, Agent>;
+export ledger agents: Map<Bytes<32>, Agent>;
 export ledger tasks: Map<Bytes<16>, Task>;
-export ledger attestations: Map<Bytes<48>, StepAttestation>; // key: taskId + stepIndex
+export ledger attestations: Map<Bytes<32>, StepAttestation>;
 
-// Circuits
-export circuit register_agent(capabilities: Bytes<64>, stake: Uint64): void {
-    const sender = transaction_author();
-    agents.insert(sender, Agent {
-        owner: sender,
-        capabilities: capabilities,
-        stake: stake,
-        reputation: 100
+// Witness: caller provides their secret key off-chain
+witness secretKey(): Bytes<32>;
+
+// Helper: derive a stable public identity from secret key
+circuit callerPk(): Bytes<32> {
+    const sk = secretKey();
+    return persistentHash<Vector<2, Bytes<32>>>(
+        [pad(32, "blindswarm:pk"), sk]
+    );
+}
+
+// Helper: derive attestation map key from task_id + step_bytes
+circuit attestationKey(task_id: Bytes<16>, step_bytes: Bytes<16>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<16>>>(
+        [task_id, step_bytes]
+    );
+}
+
+export circuit register_agent(capabilities: Bytes<64>, stake: Uint<64>): [] {
+    const sender: Bytes<32> = callerPk();
+    agents.insert(disclose(sender), Agent {
+        owner: disclose(sender),
+        capabilities: disclose(capabilities),
+        stake: disclose(stake),
+        reputation: disclose(100)
     });
 }
 
-export circuit create_task(task_id: Bytes<16>, escrow: Uint64, deadline: Uint64): void {
-    const sender = transaction_author();
-    // In a real contract, we would handle the DUST transfer here
-    tasks.insert(task_id, Task {
-        owner: sender,
-        escrow: escrow,
-        deadline: deadline,
-        is_completed: false
+export circuit create_task(task_id: Bytes<16>, escrow: Uint<64>, deadline: Uint<64>): [] {
+    const sender: Bytes<32> = callerPk();
+    tasks.insert(disclose(task_id), Task {
+        owner: disclose(sender),
+        escrow: disclose(escrow),
+        deadline: disclose(deadline),
+        is_completed: disclose(false)
     });
 }
 
 export circuit submit_attestation(
-    task_id: Bytes<16>, 
-    step_index: Uint64, 
-    agent_pk: PublicKey,
-    signature: Signature,
+    task_id: Bytes<16>,
+    step_bytes: Bytes<16>,
     output_hash: Bytes<32>
-): void {
-    // 1. Verify the signature of the agent on the task/step/hash
-    // This ensures ONLY the assigned agent could have submitted this
-    const message = task_id.concat(step_index.to_bytes()).concat(output_hash);
-    if (!check_signature(agent_pk, message, signature)) {
-        throw "Invalid attestation signature";
-    }
-
-    const key = task_id.concat(step_index.to_bytes());
-    attestations.insert(key, StepAttestation {
-        agent_id: transaction_author(),
-        output_hash: output_hash
+): [] {
+    const sender: Bytes<32> = callerPk();
+    const key: Bytes<32> = attestationKey(task_id, step_bytes);
+    attestations.insert(disclose(key), StepAttestation {
+        agent_id: disclose(sender),
+        output_hash: disclose(output_hash)
     });
 }

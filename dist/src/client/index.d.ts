@@ -1,57 +1,51 @@
 import 'dotenv/config';
 export interface ClientConfig {
     providerUrl: string;
-    walletPrivateKey: string;
+    indexerUrl: string;
+    seed: string;
+    mnemonicPhrase?: string;
     contractAddress?: string;
-    network?: 'preprod' | 'local';
 }
 export interface DeployResult {
     contractAddress: string;
     transactionId: string;
 }
 /**
- * BlindSwarm Protocol Client
- * This client provides the bridge to the Midnight Network (via local simulation or testnet integration).
- * It enforces cryptographic verification of attestations before submitting proof-of-work to the chain.
+ * BlindSwarm Real Production Client (SDK Pure)
  */
 declare class MidnightClient {
     private config;
+    private providers;
+    private wallet;
     private contract;
-    private eventWatchers;
     constructor(config: ClientConfig);
     /**
-     * Deploy the BlindSwarm orchestration contract.
-     * In the production-minded prototype, this generates a unique deterministic address.
+     * Initialize the real HD Wallet.
+     * Supports both a pre-derived 64-char hex seed OR a 24-word mnemonic phrase.
      */
-    deployContract(): Promise<DeployResult>;
-    getContractState(): Promise<any>;
+    initWallet(): Promise<void>;
+    get walletAddress(): string;
+    /**
+     * ACTUAL deployment of the provided contract logic.
+     */
+    deployContract(compiledContract: any): Promise<DeployResult>;
+    /**
+     * ACTUAL joining of an existing contract.
+     */
+    joinContract(compiledContract: any, contractAddress: string): Promise<void>;
     registerAgent(capabilities: string[], stake: bigint): Promise<{
         agentId: string;
     }>;
-    createTask(dag: any, escrow: bigint, deadline: number): Promise<{
+    createTask(taskId: string, escrow: bigint, deadline: number): Promise<{
         taskId: string;
     }>;
-    assignStep(taskId: string, stepIndex: number, agentId: string): Promise<{
+    assignStep(taskId: string, stepIndex: number, agentId: string): Promise<void>;
+    submitAttestation(taskId: string, stepBytes: Uint8Array, outputHash: string): Promise<{
         success: boolean;
     }>;
-    /**
-     * CRYPTOGRAPHICALLY VERIFIED ATTESTATION SUBMISSION
-     * This is where the core BlindSwarm protocol innovation happens:
-     * The client (or a future ZK prover) verifies that the agent signed the specific result
-     * corresponding to the task ID and step index.
-     */
-    submitAttestation(taskId: string, stepIndex: number, signature: string, outputHash: string): Promise<{
-        success: boolean;
-    }>;
-    initiateDispute(taskId: string, stepIndex: number, evidenceCommitment: string): Promise<{
-        disputeId: string;
-    }>;
-    resolveDispute(disputeId: string, resolution: 'ruled_for_initiator' | 'ruled_against_initiator', selectiveData: any): Promise<{
-        success: boolean;
-    }>;
-    watchEvent(eventName: string, callback: (data: any) => void): void;
-    private emitEvent;
+    getContractState(): Promise<any>;
+    watchEvent(eventName: string, handler: (data: any) => void): void;
 }
-export declare function createClient(config: ClientConfig): Promise<MidnightClient>;
+export declare function createClient(config: any): Promise<MidnightClient>;
 export { MidnightClient };
 //# sourceMappingURL=index.d.ts.map

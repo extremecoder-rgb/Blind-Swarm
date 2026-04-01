@@ -1,0 +1,3 @@
+export circuit test(cond: bool): [] {
+    assert cond == true, "error message";
+}

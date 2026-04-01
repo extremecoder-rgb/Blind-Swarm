@@ -57,7 +57,6 @@ export class AgentNode {
         throw new Error(`Step ${stepIndex} not found`);
       }
       
-      // Execute AI
       const prompt = step.description || `Execute step ${stepIndex}`;
       const context = { taskId, stepIndex, dependencies: step.dependencies };
       
@@ -96,10 +95,12 @@ export class AgentNode {
     // Create signature (simplified)
     const signature = `sig_${this.config.agentId}_${Date.now()}`;
     
+    const stepBytes = new Uint8Array(16);
+    stepBytes[15] = stepIndex;
+    
     await this.config.client.submitAttestation(
       taskId,
-      stepIndex,
-      signature,
+      stepBytes,
       outputHash
     );
     

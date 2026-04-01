@@ -35,7 +35,6 @@ export class AgentNode {
             if (!step) {
                 throw new Error(`Step ${stepIndex} not found`);
             }
-            // Execute AI
             const prompt = step.description || `Execute step ${stepIndex}`;
             const context = { taskId, stepIndex, dependencies: step.dependencies };
             const executionResult = await this.config.adapter.execute(prompt, context);
@@ -62,7 +61,9 @@ export class AgentNode {
         const outputHash = hashObject(output);
         // Create signature (simplified)
         const signature = `sig_${this.config.agentId}_${Date.now()}`;
-        await this.config.client.submitAttestation(taskId, stepIndex, signature, outputHash);
+        const stepBytes = new Uint8Array(16);
+        stepBytes[15] = stepIndex;
+        await this.config.client.submitAttestation(taskId, stepBytes, outputHash);
         console.log(`Attestation submitted for step ${stepIndex}`);
     }
 }

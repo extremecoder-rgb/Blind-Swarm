@@ -12,12 +12,8 @@ const server = createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ success: true, message: 'Demo started. Subscribe to WebSocket for updates.' }));
     
-    // Use real Gemini AI if API key is available
-    const useMockAI = !process.env.GEMINI_API_KEY;
-    
     runDemo({
       showTUI: false,
-      useMockAI: useMockAI, 
       geminiApiKey: process.env.GEMINI_API_KEY,
       onUpdate: (state) => {
         const payload = JSON.stringify(state);

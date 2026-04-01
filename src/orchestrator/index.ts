@@ -17,21 +17,22 @@ export class Orchestrator {
   }
 
   async start(): Promise<void> {
-    console.log('Starting Orchestrator...');
+    console.log('[ORCHESTRATOR] Initializing real-world orchestration context...');
     
     this.storage = new Storage(this.config.storagePath);
     await this.storage.open();
     
-    this.client = await import('../client/index.js').then(
-      (m) => m.createClient({
-        providerUrl: 'https://testnet.midnight.network',
+    const clientModule = await import('../client/index.js');
+    this.client = await clientModule.createClient({
         walletPrivateKey: this.config.walletPrivateKey,
         contractAddress: this.config.contractAddress,
-      })
-    );
+    });
+    
+    // Crucial: Initialize the real wallet
+    await this.client.initWallet();
     
     this.running = true;
-    console.log('Orchestrator started');
+    console.log('[ORCHESTRATOR] Real Midnight wallet connected. Ready for on-chain triggers.');
   }
 
   async stop(): Promise<void> {
@@ -55,7 +56,8 @@ export class Orchestrator {
       throw new Error(`Invalid DAG: ${validation.errors.join(', ')}`);
     }
     
-    const result = await this.client.createTask(dag, escrow, deadline);
+    const taskId = `task_${Date.now()}`;
+    const result = await this.client.createTask(taskId, escrow, deadline);
     return result.taskId;
   }
 

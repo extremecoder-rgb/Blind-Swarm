@@ -59,8 +59,8 @@ export declare const MAX_STEPS_PER_TASK = 100;
 declare const _default: {
     name: string;
     version: string;
-    circuits: ("register_agent" | "deregister_agent" | "create_task" | "assign_step" | "submit_attestation" | "initiate_dispute" | "resolve_dispute")[];
-    events: ("AgentRegistered" | "AgentDeregistered" | "TaskCreated" | "StepAssigned" | "AttestationSubmitted" | "DisputeInitiated" | "DisputeResolved")[];
+    circuits: ("register_agent" | "create_task" | "assign_step" | "submit_attestation" | "deregister_agent" | "initiate_dispute" | "resolve_dispute")[];
+    events: ("StepAssigned" | "AgentRegistered" | "AgentDeregistered" | "TaskCreated" | "AttestationSubmitted" | "DisputeInitiated" | "DisputeResolved")[];
 };
 export default _default;
 //# sourceMappingURL=BlindSwarm.d.ts.map

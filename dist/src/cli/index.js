@@ -15,7 +15,6 @@ program
     .action(async (options) => {
     if (options.run) {
         await runDemo({
-            useMockAI: options.mock ?? (process.env.GEMINI_API_KEY ? false : true),
             showTUI: options.tui !== false,
         });
     }
