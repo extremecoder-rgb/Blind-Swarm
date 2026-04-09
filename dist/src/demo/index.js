@@ -33,11 +33,14 @@ class PipelineRunner {
     }
     addLog(msg) {
         this.logs.push(msg);
+        this.broadcastState({ logs: this.logs, message: msg });
+    }
+    broadcastState(partialState) {
         if (this.dashboard) {
-            this.dashboard.update({ logs: this.logs });
+            this.dashboard.update(partialState);
         }
         if (this.config.onUpdate) {
-            this.config.onUpdate({ logs: this.logs });
+            this.config.onUpdate(partialState);
         }
     }
     async run() {
@@ -46,6 +49,17 @@ class PipelineRunner {
             this.dashboard = createDashboard();
             await this.dashboard.render();
         }
+        // Initialize and broadcast empty steps immediately for instant UI feedback
+        const initialSteps = scenario.dag.steps.map((s) => ({
+            index: s.index,
+            agentId: null,
+            status: 'pending',
+            dependencies: s.dependencies || [],
+            inputHash: '',
+            outputHash: null,
+            attestation: null
+        }));
+        this.broadcastState({ status: 'STARTING', steps: initialSteps });
         this.addLog(`🚀 DeFi Analytics Pipeline Starting...`);
         this.addLog(`Project: ${scenario.projectName}`);
         this.addLog(`Agents: ${scenario.agents.map((a) => a.name).join(', ')}`);
@@ -68,6 +82,7 @@ class PipelineRunner {
                 privateKey: keys.privateKey
             });
         }
+        this.broadcastState({ agents: registeredAgents });
         this.addLog(`\n⚡ Executing DeFi Analytics Pipeline...`);
         const steps = scenario.dag.steps.map((s) => ({
             index: s.index,
@@ -81,6 +96,7 @@ class PipelineRunner {
         if (this.dashboard) {
             this.dashboard.update({ status: 'RUNNING', steps });
         }
+        this.broadcastState({ status: 'RUNNING', steps });
         const stepToAgent = {
             0: registeredAgents[0], // Fetcher
             1: registeredAgents[1], // Risk
@@ -91,12 +107,12 @@ class PipelineRunner {
             const step = scenario.dag.steps[stepIndex];
             const assignedAgent = stepToAgent[stepIndex];
             this.addLog(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
-            this.addLog(`📡 ${assignedAgent.name} Processing...`);
+            this.addLog(`📡 [Step ${stepIndex + 1}/4] Assigning Agent: ${assignedAgent.name}...`);
             this.addLog(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
             steps[stepIndex].status = 'assigned';
             steps[stepIndex].agentId = assignedAgent.publicKey;
-            if (this.dashboard)
-                this.dashboard.update({ steps });
+            this.broadcastState({ steps });
+            this.addLog(`🔐 Cryptographic link established: ${assignedAgent.publicKey.substring(0, 16)}...`);
             const systemPrompt = AGENT_PROMPTS[assignedAgent.capability] || '';
             let aiResult;
             if (this.config.useMockAI) {
@@ -147,8 +163,7 @@ class PipelineRunner {
             steps[stepIndex].status = 'completed';
             steps[stepIndex].outputHash = outputHash;
             steps[stepIndex].attestation = signature;
-            if (this.dashboard)
-                this.dashboard.update({ steps });
+            this.broadcastState({ steps });
             this.addLog(`\n✅ Step ${stepIndex + 1}/4 Complete`);
         }
         this.addLog(`\n╔═══════════════════════════════════════════════════════╗`);
@@ -160,6 +175,7 @@ class PipelineRunner {
         this.addLog(`Status: All outputs cryptographically signed`);
         if (this.dashboard)
             this.dashboard.update({ status: 'COMPLETED' });
+        this.broadcastState({ status: 'COMPLETED' });
         await new Promise(r => setTimeout(r, 3000));
         if (this.dashboard)
             this.dashboard.stop();

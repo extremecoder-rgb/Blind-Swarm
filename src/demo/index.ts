@@ -26,23 +26,27 @@ export interface AgentData {
 }
 
 const AGENT_PROMPTS: Record<string, string> = {
-  fetcher: `You are an On-Chain Data Fetcher specialized in DeFi analytics. 
-Your role is to fetch and normalize on-chain data from blockchain nodes.
-Focus on: pool reserves, token balances, volume, gas fees, block timestamps.
+  fetcher: `You are an On-Chain Data Fetcher specialized in DeFi analytics for the Midnight Network. 
+Your role is to fetch and normalize on-chain data from Midnight blockchain nodes.
+CRITICAL: You must ONLY refer to the Midnight Network, testnet, and native tokens (tNIGHT and DUST).
+Focus on: pool reserves (e.g., tNIGHT/USDC), token balances, shielded pool volume, and ZK gas fees.
 Provide raw data in structured JSON format with exact values and timestamps.`,
   
-  risk: `You are a DeFi Risk Analyst specialized in protocol security assessment.
-Your role is to analyze smart contract risk, impermanent loss, and protocol exposure.
-Consider: TVL concentration, audit reports, exploit history, volatility, oracle manipulation.
+  risk: `You are a DeFi Risk Analyst specialized in protocol security assessment for the Midnight Network.
+Your role is to analyze smart contract risk and protocol exposure on Midnight.
+CRITICAL: You must ONLY refer to the Midnight Network, Compact language smart contracts, and Midnight tokens.
+Consider: shielded pool concentration, ZK-SNARK proving risks, audit reports for Compact contracts, and exploit history.
 Provide risk scores (0-100) with specific vulnerability findings and severity levels.`,
   
-  yield: `You are a Yield Optimization Engine specialized in DeFi strategy analysis.
-Your role is to calculate optimal yield strategies across different protocols.
-Analyze: APY comparisons, incentive rewards, gas costs, impermanent loss estimates.
+  yield: `You are a Yield Optimization Engine specialized in Midnight Network DeFi strategy analysis.
+Your role is to calculate optimal yield strategies across Midnight protocols.
+CRITICAL: You must ONLY refer to the Midnight Network.
+Analyze: APY comparisons for shielded vs unshielded staking, incentive rewards in tNIGHT, ZK proof generation costs.
 Provide ranked recommendations with expected returns and risk-adjusted scores.`,
   
-  report: `You are a DeFi Analytics Report Generator specialized in executive summaries.
+  report: `You are a DeFi Analytics Report Generator specialized in executive summaries for the Midnight Ecosystem.
 Your role is to synthesize data from all agents into actionable insights.
+CRITICAL: The report must clearly state it is for the Midnight Network.
 Create: executive summary, key metrics, risk alerts, yield recommendations, next steps.
 Format as clean markdown with clear sections and bullet points for decision makers.`,
 };
@@ -140,6 +144,7 @@ class PipelineRunner {
       3: registeredAgents[3], // Report
     };
 
+    const results: Record<string, string> = {};
     for (const stepIndex of scenario.dag.steps.map((s: any) => s.index)) {
       const step = scenario.dag.steps[stepIndex];
       const assignedAgent = stepToAgent[stepIndex];
@@ -150,7 +155,7 @@ class PipelineRunner {
       
       steps[stepIndex].status = 'assigned';
       steps[stepIndex].agentId = assignedAgent.publicKey;
-      this.broadcastState({ steps });
+      this.broadcastState({ steps, results });
       
       this.addLog(`🔐 Cryptographic link established: ${assignedAgent.publicKey.substring(0, 16)}...`);
 
@@ -177,7 +182,7 @@ class PipelineRunner {
         }
       } else if (this.config.geminiApiKey) {
         try {
-          const adapter = createGeminiAdapter(this.config.geminiApiKey, 'gemini-2.0-flash', systemPrompt);
+          const adapter = createGeminiAdapter(this.config.geminiApiKey, 'gemini-1.5-flash', systemPrompt);
           aiResult = await adapter.execute(step.description, { step: stepIndex, project: scenario.projectName });
         } catch {
           const mock = createMockAdapter(assignedAgent.capability);
@@ -202,10 +207,12 @@ class PipelineRunner {
       this.addLog(`   Signature: ${signature.substring(0, 24)}...`);
       this.addLog(`   SHA-256: ${outputHash.substring(0, 16)}...`);
 
+      results[assignedAgent.capability] = aiResult.result;
       steps[stepIndex].status = 'completed';
       steps[stepIndex].outputHash = outputHash;
       steps[stepIndex].attestation = signature;
-      this.broadcastState({ steps });
+      
+      this.broadcastState({ steps, results });
       
       this.addLog(`\n✅ Step ${stepIndex + 1}/4 Complete`);
     }
@@ -219,7 +226,7 @@ class PipelineRunner {
     this.addLog(`Status: All outputs cryptographically signed`);
     
     if (this.dashboard) this.dashboard.update({ status: 'COMPLETED' });
-    this.broadcastState({ status: 'COMPLETED' });
+    this.broadcastState({ status: 'COMPLETED', results });
     
     await new Promise(r => setTimeout(r, 3000));
     if (this.dashboard) this.dashboard.stop();
