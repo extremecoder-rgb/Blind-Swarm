@@ -11,6 +11,7 @@ export interface TaskProgress {
 export type { TaskStep } from '../types/index.js';
 export declare class Dashboard {
     private running;
+    private agentCount;
     render(): Promise<void>;
     update(progress: Partial<TaskProgress>): void;
     addLog(log: string): void;

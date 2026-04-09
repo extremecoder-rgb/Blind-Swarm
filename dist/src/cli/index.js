@@ -3,36 +3,27 @@ import { Command } from 'commander';
 import { runDemo } from '../demo/index.js';
 const program = new Command();
 program
-    .name('blindswarm')
-    .description('Privacy-preserving multi-agent AI orchestration on Midnight Network')
+    .name('gaming-studio')
+    .description('Multi-agent AI game development system')
     .version('0.1.0');
 program
     .command('demo')
-    .description('Run the 3-agent BlindSwarm protocol demo with live TUI')
+    .description('Run the Gaming Studio multi-agent demo')
     .option('--run', 'Run demo automatically')
-    .option('--mock', 'Force mock AI instead of Gemini')
     .option('--no-tui', 'Disable graphical terminal interface')
+    .option('--mock', 'Use mock AI responses (no API key required)')
     .action(async (options) => {
     if (options.run) {
         await runDemo({
             showTUI: options.tui !== false,
+            useMockAI: options.mock || false,
         });
     }
     else {
-        console.log('Use --run to execute the BlindSwarm protocol demo.');
-        console.log('Example: blindswarm demo --run');
+        console.log('Use --run to execute the Gaming Studio demo.');
+        console.log('Example: gaming-studio demo --run --mock');
     }
 });
-// Mock individual commands for hackathon CLI completeness
-program
-    .command('register-agent')
-    .description('Register a new agent (Manual)')
-    .requiredOption('--capabilities <capabilities>', 'Comma-separated capabilities')
-    .action(() => console.log('Use "blindswarm demo --run" to see automated registration/orchestration.'));
-program
-    .command('create-task')
-    .description('Create a new task with DAG (Manual)')
-    .action(() => console.log('Use "blindswarm demo --run" to see automated task creation.'));
 export function createCLI() {
     return program;
 }

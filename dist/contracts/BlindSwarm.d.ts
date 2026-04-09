@@ -59,7 +59,7 @@ export declare const MAX_STEPS_PER_TASK = 100;
 declare const _default: {
     name: string;
     version: string;
-    circuits: ("register_agent" | "create_task" | "assign_step" | "submit_attestation" | "deregister_agent" | "initiate_dispute" | "resolve_dispute")[];
+    circuits: ("register_agent" | "create_task" | "submit_attestation" | "deregister_agent" | "assign_step" | "initiate_dispute" | "resolve_dispute")[];
     events: ("StepAssigned" | "AgentRegistered" | "AgentDeregistered" | "TaskCreated" | "AttestationSubmitted" | "DisputeInitiated" | "DisputeResolved")[];
 };
 export default _default;

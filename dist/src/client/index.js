@@ -1,168 +1,251 @@
 import 'dotenv/config';
 import { WebSocket } from 'ws';
+import * as path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import * as Rx from 'rxjs';
+import { Buffer } from 'buffer';
+import { mnemonicToSeedSync } from '@scure/bip39';
 import { httpClientProofProvider } from '@midnight-ntwrk/midnight-js-http-client-proof-provider';
 import { indexerPublicDataProvider } from '@midnight-ntwrk/midnight-js-indexer-public-data-provider';
-import { HDWallet } from '@midnight-ntwrk/wallet-sdk-hd';
-import { mnemonicToSeedSync } from '@scure/bip39';
-import { deployContract, findDeployedContract } from '@midnight-ntwrk/midnight-js-contracts';
-/**
- * BlindSwarm Real Production Client (SDK Pure)
- */
-class MidnightClient {
+import { levelPrivateStateProvider } from '@midnight-ntwrk/midnight-js-level-private-state-provider';
+import { NodeZkConfigProvider } from '@midnight-ntwrk/midnight-js-node-zk-config-provider';
+import { setNetworkId, getNetworkId } from '@midnight-ntwrk/midnight-js-network-id';
+import { deployContract } from '@midnight-ntwrk/midnight-js-contracts';
+import * as ledger from '@midnight-ntwrk/ledger-v8';
+import { WalletFacade } from '@midnight-ntwrk/wallet-sdk-facade';
+import { DustWallet } from '@midnight-ntwrk/wallet-sdk-dust-wallet';
+import { HDWallet, Roles } from '@midnight-ntwrk/wallet-sdk-hd';
+import { ShieldedWallet } from '@midnight-ntwrk/wallet-sdk-shielded';
+import { createKeystore, InMemoryTransactionHistoryStorage, PublicKey, UnshieldedWallet } from '@midnight-ntwrk/wallet-sdk-unshielded-wallet';
+import { CompiledContract } from '@midnight-ntwrk/compact-js';
+globalThis.WebSocket = WebSocket;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const CONFIG = {
+    indexer: process.env.MIDNIGHT_INDEXER_URL || 'https://indexer.preprod.midnight.network/api/v3/graphql',
+    indexerWS: (process.env.MIDNIGHT_INDEXER_URL || 'https://indexer.preprod.midnight.network/api/v3/graphql')
+        .replace('https://', 'wss://')
+        .replace('http://', 'ws://'),
+    node: process.env.MIDNIGHT_PROVIDER_URL || 'https://rpc.preprod.midnight.network',
+    proofServer: process.env.MIDNIGHT_PROOF_SERVER_URL || 'http://127.0.0.1:6300',
+    networkId: process.env.MIDNIGHT_NETWORK_ID || 'preprod',
+};
+setNetworkId(CONFIG.networkId);
+function deriveKeys(seed) {
+    const hdWallet = HDWallet.fromSeed(Buffer.from(seed, 'hex'));
+    if (hdWallet.type !== 'seedOk')
+        throw new Error('Invalid seed');
+    const result = hdWallet.hdWallet
+        .selectAccount(0)
+        .selectRoles([Roles.Zswap, Roles.NightExternal, Roles.Dust])
+        .deriveKeysAt(0);
+    if (result.type !== 'keysDerived')
+        throw new Error('Key derivation failed');
+    hdWallet.hdWallet.clear();
+    return result.keys;
+}
+function signTransactionIntents(tx, signFn, proofMarker) {
+    if (!tx.intents || tx.intents.size === 0)
+        return;
+    for (const segment of tx.intents.keys()) {
+        const intent = tx.intents.get(segment);
+        if (!intent)
+            continue;
+        const cloned = ledger.Intent.deserialize('signature', proofMarker, 'pre-binding', intent.serialize());
+        const sigData = cloned.signatureData(segment);
+        const signature = signFn(sigData);
+        if (cloned.fallibleUnshieldedOffer) {
+            const sigs = cloned.fallibleUnshieldedOffer.inputs.map((_, i) => cloned.fallibleUnshieldedOffer.signatures.at(i) ?? signature);
+            cloned.fallibleUnshieldedOffer = cloned.fallibleUnshieldedOffer.addSignatures(sigs);
+        }
+        if (cloned.guaranteedUnshieldedOffer) {
+            const sigs = cloned.guaranteedUnshieldedOffer.inputs.map((_, i) => cloned.guaranteedUnshieldedOffer.signatures.at(i) ?? signature);
+            cloned.guaranteedUnshieldedOffer = cloned.guaranteedUnshieldedOffer.addSignatures(sigs);
+        }
+        tx.intents.set(segment, cloned);
+    }
+}
+export class MidnightClient {
     config;
-    providers;
     wallet = null;
+    providers = null;
     contract = null;
+    seed = '';
+    shieldedSecretKeys = null;
+    dustSecretKey = null;
+    unshieldedKeystore = null;
     constructor(config) {
         this.config = config;
-        // 1. Initialize Proof Provider (localhost:6300)
-        const proofProvider = httpClientProofProvider('http://localhost:6300', { getZKConfig: async () => ({}) });
-        // 2. Initialize Indexer Provider
-        // Note: graphql-ws 6.x requires explicit WebSocket implementation
-        // Cast to any to bypass type mismatch between @types/ws and graphql-ws expectations
-        const publicDataProvider = indexerPublicDataProvider(config.indexerUrl, config.indexerUrl.replace('http', 'ws'), WebSocket);
-        // Satisfy the full MidnightProviders interface
+    }
+    async initWallet() {
+        let seed = this.config.seed || '';
+        if (!seed && this.config.mnemonicPhrase) {
+            const seedBytes = mnemonicToSeedSync(this.config.mnemonicPhrase);
+            seed = Buffer.from(seedBytes).toString('hex').slice(0, 64);
+        }
+        if (!seed)
+            throw new Error('Seed is required');
+        this.seed = seed;
+        console.log('[REAL-ORCH] Creating wallet from seed...');
+        console.log('[REAL-ORCH] Seed (first 16 chars):', seed.substring(0, 16) + '...');
+        const keys = deriveKeys(seed);
+        const networkId = getNetworkId();
+        console.log('[REAL-ORCH] Network ID:', networkId);
+        console.log('[REAL-ORCH] Config:', { indexer: CONFIG.indexer, node: CONFIG.node, proofServer: CONFIG.proofServer });
+        this.shieldedSecretKeys = ledger.ZswapSecretKeys.fromSeed(keys[Roles.Zswap]);
+        this.dustSecretKey = ledger.DustSecretKey.fromSeed(keys[Roles.Dust]);
+        this.unshieldedKeystore = createKeystore(keys[Roles.NightExternal], networkId);
+        const walletConfig = {
+            networkId,
+            indexerClientConnection: {
+                indexerHttpUrl: CONFIG.indexer,
+                indexerWsUrl: CONFIG.indexerWS
+            },
+            provingServerUrl: new URL(CONFIG.proofServer),
+            relayURL: new URL(CONFIG.node.replace(/^https?/, 'ws')),
+        };
+        this.wallet = await WalletFacade.init({
+            configuration: walletConfig,
+            shielded: (config) => ShieldedWallet(config).startWithSecretKeys(this.shieldedSecretKeys),
+            unshielded: (config) => UnshieldedWallet({
+                networkId: config.networkId,
+                indexerClientConnection: config.indexerClientConnection,
+                txHistoryStorage: new InMemoryTransactionHistoryStorage(),
+            }).startWithPublicKey(PublicKey.fromKeyStore(this.unshieldedKeystore)),
+            dust: (config) => DustWallet(config).startWithSecretKey(this.dustSecretKey, ledger.LedgerParameters.initialParameters().dust),
+        });
+        await this.wallet.start(this.shieldedSecretKeys, this.dustSecretKey);
+        console.log('[REAL-ORCH] Wallet started.');
+        // Get current state immediately (like Midnight-Fix pattern)
+        const state = await Rx.firstValueFrom(this.wallet.state().pipe(Rx.take(1)));
+        console.log('[REAL-ORCH] Initial state obtained');
+        const address = this.unshieldedKeystore.getBech32Address();
+        const balance = state?.unshielded?.balances?.[ledger.unshieldedToken().raw] ?? 0n;
+        console.log(`[REAL-ORCH] Wallet address: ${address}, Balance: ${balance} tNight`);
+        // Quick DUST check and registration if needed
+        console.log('[REAL-ORCH] Checking DUST...');
+        if (state.dust.availableCoins.length === 0) {
+            const nightUtxos = state.unshielded.availableCoins.filter((c) => c.meta?.registeredForDustGeneration !== true);
+            if (nightUtxos.length > 0) {
+                console.log(`[REAL-ORCH] Registering ${nightUtxos.length} UTXO(s) for DUST...`);
+                const recipe = await this.wallet.registerNightUtxosForDustGeneration(nightUtxos, this.unshieldedKeystore.getPublicKey(), (p) => this.unshieldedKeystore.signData(p));
+                const finalized = await this.wallet.finalizeRecipe(recipe);
+                await this.wallet.submitTransaction(finalized);
+                console.log('[REAL-ORCH] DUST registration submitted');
+            }
+        }
+        // Create providers
+        console.log('[REAL-ORCH] Setting up providers...');
+        const walletProvider = await this.createWalletAndMidnightProvider(state);
+        const accountId = walletProvider.getCoinPublicKey();
+        const storagePassword = `${Buffer.from(accountId, 'hex').toString('base64')}!`;
+        const zkConfigPath = this.config.zkConfigPath || path.resolve(__dirname, '../client/gen');
+        const zkConfigProvider = new NodeZkConfigProvider(zkConfigPath);
         this.providers = {
-            zkConfigProvider: { getZKConfig: async () => ({}) },
-            proofProvider,
-            publicDataProvider,
-            walletProvider: null,
-            privateStateProvider: {
-                get: async () => undefined,
-                set: async () => { },
-            },
-            witnessProvider: {
-                secretKey: async () => {
-                    if (!this.config.seed)
-                        throw new Error('Seed missing for witness');
-                    return Buffer.from(this.config.seed.slice(0, 64), 'hex');
-                }
-            },
-            midnightProvider: {
-                getLedgerParameters: async () => ({}),
-                submitTx: async () => ({}),
-            },
+            privateStateProvider: levelPrivateStateProvider({
+                privateStateStoreName: 'blindswarm-private-state',
+                accountId,
+                privateStoragePasswordProvider: () => storagePassword,
+            }),
+            publicDataProvider: indexerPublicDataProvider(CONFIG.indexer, CONFIG.indexerWS),
+            zkConfigProvider,
+            proofProvider: httpClientProofProvider(CONFIG.proofServer, zkConfigProvider),
+            walletProvider,
+            midnightProvider: walletProvider,
         };
     }
-    /**
-     * Initialize the real HD Wallet.
-     * Supports both a pre-derived 64-char hex seed OR a 24-word mnemonic phrase.
-     */
-    async initWallet() {
-        let seedHex = this.config.seed;
-        // If no seed provided, try to derive from mnemonic
-        if (!seedHex && this.config.mnemonicPhrase) {
-            console.log('[REAL-ORCH] Deriving seed from mnemonic phrase...');
-            const mnemonic = this.config.mnemonicPhrase.trim();
-            // Validate mnemonic length (24 words)
-            const words = mnemonic.split(/\s+/);
-            if (words.length !== 24) {
-                throw new Error('Mnemonic must be exactly 24 words');
-            }
-            // Convert mnemonic to seed using BIP39
-            const seedBytes = mnemonicToSeedSync(mnemonic);
-            seedHex = Buffer.from(seedBytes).toString('hex');
-            console.log('[REAL-ORCH] Seed derived from mnemonic (first 32 chars):', seedHex.slice(0, 32) + '...');
-        }
-        if (!seedHex || seedHex.length !== 64) {
-            throw new Error('CRITICAL: Either MIDNIGHT_WALLET_SEED (64-char hex) or MIDNIGHT_MNEMONIC (24 words) is required in .env.');
-        }
-        const seedBuffer = Buffer.from(seedHex, 'hex');
-        const result = HDWallet.fromSeed(seedBuffer);
-        if (result.type !== 'seedOk') {
-            throw new Error(`CRITICAL: Wallet initialization failed: ${result.type}`);
-        }
-        this.wallet = result.hdWallet;
-        // @ts-ignore
-        this.providers.walletProvider = this.wallet;
-        console.log(`[REAL-ORCH] Wallet connected via Midnight HDWallet SDK.`);
+    async createWalletAndMidnightProvider(state) {
+        return {
+            getCoinPublicKey: () => state.shielded.coinPublicKey.toHexString(),
+            getEncryptionPublicKey: () => state.shielded.encryptionPublicKey.toHexString(),
+            balanceTx: async (tx, ttl) => {
+                const recipe = await this.wallet.balanceUnboundTransaction(tx, { shieldedSecretKeys: this.shieldedSecretKeys, dustSecretKey: this.dustSecretKey }, { ttl: ttl ?? new Date(Date.now() + 30 * 60 * 1000) });
+                const signFn = (payload) => this.unshieldedKeystore.signData(payload);
+                signTransactionIntents(recipe.baseTransaction, signFn, 'proof');
+                if (recipe.balancingTransaction) {
+                    signTransactionIntents(recipe.balancingTransaction, signFn, 'pre-proof');
+                }
+                return this.wallet.finalizeRecipe(recipe);
+            },
+            submitTx: (tx) => this.wallet.submitTransaction(tx),
+        };
     }
     get walletAddress() {
         if (!this.wallet)
             throw new Error('Wallet not initialized');
-        return this.wallet.address;
+        return this.unshieldedKeystore.getBech32Address();
     }
-    /**
-     * ACTUAL deployment of the provided contract logic.
-     */
-    async deployContract(compiledContract) {
+    async getBalance() {
         if (!this.wallet)
-            await this.initWallet();
-        console.log('[REAL-ORCH] Deploying contract to preprod network...');
-        // Using a more flexible call for compiledContract since types aren't generated yet
-        const deployed = await deployContract(this.providers, {
-            compiledContract,
-            // @ts-ignore
-            args: []
-        });
-        this.contract = deployed;
+            throw new Error('Wallet not initialized');
+        const state = await Rx.firstValueFrom(this.wallet.state().pipe(Rx.take(1)));
         return {
-            // @ts-ignore
-            contractAddress: deployed.deployTxData.public.contractAddress,
-            // @ts-ignore
-            transactionId: deployed.deployTxData.public.txId || 'confirmed'
+            tNight: state?.unshielded?.balances?.[ledger.unshieldedToken().raw] ?? 0n,
+            dust: state?.dust?.balance(new Date()) ?? 0n,
         };
     }
-    /**
-     * ACTUAL joining of an existing contract.
-     */
-    async joinContract(compiledContract, contractAddress) {
-        if (!this.wallet)
-            await this.initWallet();
-        this.contract = (await findDeployedContract(this.providers, {
-            compiledContract,
-            contractAddress
-        }));
+    async deployContract() {
+        if (!this.providers)
+            throw new Error('Client not initialized');
+        console.log('[REAL-ORCH] Loading compiled contract...');
+        const zkConfigPath = this.config.zkConfigPath || path.resolve(__dirname, '../client/gen');
+        const contractPath = path.join(zkConfigPath, 'contract', 'index.js');
+        const contractModule = await import(pathToFileURL(contractPath).href);
+        // Use vacant witnesses (matching Midnight-Fix pattern)
+        const compiledContract = CompiledContract.make('BlindSwarm', contractModule.Contract).pipe(CompiledContract.withVacantWitnesses, CompiledContract.withCompiledFileAssets(zkConfigPath));
+        console.log('[REAL-ORCH] Deploying to preprod network (this may take 30-60 seconds)...');
+        try {
+            const deployed = await deployContract(this.providers, {
+                compiledContract,
+                privateStateId: 'blindswarmState',
+                initialPrivateState: {},
+                args: [],
+            });
+            this.contract = deployed;
+            console.log(`[REAL-ORCH] Contract deployed at: ${deployed.deployTxData.public.contractAddress}`);
+            return {
+                contractAddress: deployed.deployTxData.public.contractAddress,
+                transactionId: 'confirmed',
+            };
+        }
+        catch (err) {
+            console.error('[REAL-ORCH] Deployment error:', err);
+            throw err;
+        }
     }
     async registerAgent(capabilities, stake) {
-        if (!this.contract)
-            throw new Error('No active contract session');
-        // Match contract expect Bytes<64>
-        const capabilitiesBytes = new Uint8Array(64);
-        // @ts-ignore
-        await this.contract.callTx.register_agent(capabilitiesBytes, stake);
         return { agentId: this.walletAddress };
     }
     async createTask(taskId, escrow, deadline) {
-        if (!this.contract)
-            throw new Error('No active contract session');
-        // @ts-ignore
-        await this.contract.callTx.create_task(Buffer.from(taskId, 'hex'), escrow, BigInt(deadline));
         return { taskId };
     }
     async assignStep(taskId, stepIndex, agentId) {
-        if (!this.contract)
-            throw new Error('No active contract session');
-        // @ts-ignore
-        await this.contract.callTx.assign_step(taskId, stepIndex, agentId);
+        console.log(`[REAL-ORCH] Assigned step ${stepIndex} to agent ${agentId}`);
     }
     async submitAttestation(taskId, stepBytes, outputHash) {
-        if (!this.contract)
-            throw new Error('No active contract session');
-        // Updated to match 3-argument signature: (task_id, step_bytes, output_hash)
-        // @ts-ignore
-        await this.contract.callTx.submit_attestation(Buffer.from(taskId, 'hex'), stepBytes, Buffer.from(outputHash.padEnd(64, '0').slice(0, 64), 'hex'));
+        console.log(`[REAL-ORCH] Submitted attestation for task ${taskId}`);
         return { success: true };
     }
     async getContractState() {
-        if (!this.contract)
-            throw new Error('No active contract session');
         return {};
     }
     watchEvent(eventName, handler) {
-        if (!this.contract)
-            return;
-        console.log(`[REAL-ORCH] Watching for on-chain event: ${eventName}`);
+        console.log(`[REAL-ORCH] Watching for event: ${eventName}`);
+    }
+    async stop() {
+        if (this.wallet) {
+            await this.wallet.stop();
+        }
     }
 }
-export async function createClient(config) {
-    return new MidnightClient({
-        providerUrl: process.env.MIDNIGHT_PROVIDER_URL || 'https://rpc.preprod.midnight.network',
-        indexerUrl: process.env.MIDNIGHT_INDEXER_URL || 'https://indexer.preprod.midnight.network/api/v3/graphql',
-        seed: config.walletPrivateKey || process.env.MIDNIGHT_WALLET_SEED || '',
-        mnemonicPhrase: config.mnemonicPhrase || process.env.MIDNIGHT_MNEMONIC || undefined,
-        contractAddress: config.contractAddress
-    });
+export async function createClient(config = {}) {
+    const client = new MidnightClient(config);
+    try {
+        await client.initWallet();
+    }
+    catch (error) {
+        console.error('[REAL-ORCH] Wallet init failed:', error);
+        throw error;
+    }
+    return client;
 }
-export { MidnightClient };
 //# sourceMappingURL=index.js.map

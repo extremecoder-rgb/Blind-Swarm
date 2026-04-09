@@ -45,6 +45,12 @@ circuit attestationKey(task_id: Bytes<16>, step_bytes: Bytes<16>): Bytes<32> {
     );
 }
 
+// Contract initialization - required for deployment
+export contract BlindSwarm() {
+    // Initialize empty state - this is required for contract deployment
+    // The contract starts with no agents, no tasks, no attestations
+}
+
 export circuit register_agent(capabilities: Bytes<64>, stake: Uint<64>): [] {
     const sender: Bytes<32> = callerPk();
     agents.insert(disclose(sender), Agent {

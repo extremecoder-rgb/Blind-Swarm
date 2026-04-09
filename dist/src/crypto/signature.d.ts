@@ -21,4 +21,5 @@ export declare function generateKeypair(): Promise<{
 }>;
 export declare function hexToUint8Array(hex: string): Uint8Array;
 export declare function uint8ArrayToHex(arr: Uint8Array): string;
+export declare function hashMessage(message: string): Promise<string>;
 //# sourceMappingURL=signature.d.ts.map

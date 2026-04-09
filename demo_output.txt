@@ -1,0 +1,2066 @@
+
+> blindswarm@0.2.0 demo
+> node dist/src/cli/index.js demo --run
+
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🎮 Gaming Studio Multi-Agent System Starting...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🎮 Gaming Studio Multi-Agent System Starting...
+  Project: Neon Warriors - Action RPG Prototype
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🎮 Gaming Studio Multi-Agent System Starting...
+  Project: Neon Warriors - Action RPG Prototype
+  Team: 3D Modeler Agent, Gameplay Programmer Agent, UI/UX Designer Agen
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🎮 Gaming Studio Multi-Agent System Starting...
+  Project: Neon Warriors - Action RPG Prototype
+  Team: 3D Modeler Agent, Gameplay Programmer Agent, UI/UX Designer Agen
+  
+📋 Development Pipeline:
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🎮 Gaming Studio Multi-Agent System Starting...
+  Project: Neon Warriors - Action RPG Prototype
+  Team: 3D Modeler Agent, Gameplay Programmer Agent, UI/UX Designer Agen
+  
+📋 Development Pipeline:
+    Step 1: Create foundational game assets - character models... (initi
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🎮 Gaming Studio Multi-Agent System Starting...
+  Project: Neon Warriors - Action RPG Prototype
+  Team: 3D Modeler Agent, Gameplay Programmer Agent, UI/UX Designer Agen
+  
+📋 Development Pipeline:
+    Step 1: Create foundational game assets - character models... (initi
+    Step 2: Implement core gameplay mechanics - player movemen... (depen
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  Project: Neon Warriors - Action RPG Prototype
+  Team: 3D Modeler Agent, Gameplay Programmer Agent, UI/UX Designer Agen
+  
+📋 Development Pipeline:
+    Step 1: Create foundational game assets - character models... (initi
+    Step 2: Implement core gameplay mechanics - player movemen... (depen
+    Step 3: Design and implement UI/UX - main menu, HUD, setti... (depen
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  Team: 3D Modeler Agent, Gameplay Programmer Agent, UI/UX Designer Agen
+  
+📋 Development Pipeline:
+    Step 1: Create foundational game assets - character models... (initi
+    Step 2: Implement core gameplay mechanics - player movemen... (depen
+    Step 3: Design and implement UI/UX - main menu, HUD, setti... (depen
+    Step 4: Add character animations and visual effects - walk... (depen
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+📋 Development Pipeline:
+    Step 1: Create foundational game assets - character models... (initi
+    Step 2: Implement core gameplay mechanics - player movemen... (depen
+    Step 3: Design and implement UI/UX - main menu, HUD, setti... (depen
+    Step 4: Add character animations and visual effects - walk... (depen
+  
+🤖 Provisioning AI agents with cryptographic identities...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    Step 1: Create foundational game assets - character models... (initi
+    Step 2: Implement core gameplay mechanics - player movemen... (depen
+    Step 3: Design and implement UI/UX - main menu, HUD, setti... (depen
+    Step 4: Add character animations and visual effects - walk... (depen
+  
+🤖 Provisioning AI agents with cryptographic identities...
+    ✓ 3D Modeler Agent [Lead 3D Artist]
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    Step 2: Implement core gameplay mechanics - player movemen... (depen
+    Step 3: Design and implement UI/UX - main menu, HUD, setti... (depen
+    Step 4: Add character animations and visual effects - walk... (depen
+  
+🤖 Provisioning AI agents with cryptographic identities...
+    ✓ 3D Modeler Agent [Lead 3D Artist]
+      Public Key: fb717e25ff8bf13e...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    Step 3: Design and implement UI/UX - main menu, HUD, setti... (depen
+    Step 4: Add character animations and visual effects - walk... (depen
+  
+🤖 Provisioning AI agents with cryptographic identities...
+    ✓ 3D Modeler Agent [Lead 3D Artist]
+      Public Key: fb717e25ff8bf13e...
+    ✓ Gameplay Programmer Agent [Senior Gameplay Engineer]
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    Step 4: Add character animations and visual effects - walk... (depen
+  
+🤖 Provisioning AI agents with cryptographic identities...
+    ✓ 3D Modeler Agent [Lead 3D Artist]
+      Public Key: fb717e25ff8bf13e...
+    ✓ Gameplay Programmer Agent [Senior Gameplay Engineer]
+      Public Key: 4440a71d6042ce85...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+🤖 Provisioning AI agents with cryptographic identities...
+    ✓ 3D Modeler Agent [Lead 3D Artist]
+      Public Key: fb717e25ff8bf13e...
+    ✓ Gameplay Programmer Agent [Senior Gameplay Engineer]
+      Public Key: 4440a71d6042ce85...
+    ✓ UI/UX Designer Agent [UI/UX Lead]
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    ✓ 3D Modeler Agent [Lead 3D Artist]
+      Public Key: fb717e25ff8bf13e...
+    ✓ Gameplay Programmer Agent [Senior Gameplay Engineer]
+      Public Key: 4440a71d6042ce85...
+    ✓ UI/UX Designer Agent [UI/UX Lead]
+      Public Key: 7e9679a21d2cef10...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+      Public Key: fb717e25ff8bf13e...
+    ✓ Gameplay Programmer Agent [Senior Gameplay Engineer]
+      Public Key: 4440a71d6042ce85...
+    ✓ UI/UX Designer Agent [UI/UX Lead]
+      Public Key: 7e9679a21d2cef10...
+    ✓ Animation Agent [Lead Animator]
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    ✓ Gameplay Programmer Agent [Senior Gameplay Engineer]
+      Public Key: 4440a71d6042ce85...
+    ✓ UI/UX Designer Agent [UI/UX Lead]
+      Public Key: 7e9679a21d2cef10...
+    ✓ Animation Agent [Lead Animator]
+      Public Key: 59f1dc8e6a54e63e...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+      Public Key: 4440a71d6042ce85...
+    ✓ UI/UX Designer Agent [UI/UX Lead]
+      Public Key: 7e9679a21d2cef10...
+    ✓ Animation Agent [Lead Animator]
+      Public Key: 59f1dc8e6a54e63e...
+  
+🚀 Starting Game Development Pipeline...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: EXECUTING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    ✓ UI/UX Designer Agent [UI/UX Lead]
+      Public Key: 7e9679a21d2cef10...
+    ✓ Animation Agent [Lead Animator]
+      Public Key: 59f1dc8e6a54e63e...
+  
+🚀 Starting Game Development Pipeline...
+  
+--- Step 1: 3D Modeler Agent ---
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+      Public Key: 7e9679a21d2cef10...
+    ✓ Animation Agent [Lead Animator]
+      Public Key: 59f1dc8e6a54e63e...
+  
+🚀 Starting Game Development Pipeline...
+  
+--- Step 1: 3D Modeler Agent ---
+  Task: Create foundational game assets - character models, environment 
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+    ✓ Animation Agent [Lead Animator]
+      Public Key: 59f1dc8e6a54e63e...
+  
+🚀 Starting Game Development Pipeline...
+  
+--- Step 1: 3D Modeler Agent ---
+  Task: Create foundational game assets - character models, environment 
+  🤖 Using Groq AI for 3D Modeler Agent...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+      Public Key: 59f1dc8e6a54e63e...
+  
+🚀 Starting Game Development Pipeline...
+  
+--- Step 1: 3D Modeler Agent ---
+  Task: Create foundational game assets - character models, environment 
+  🤖 Using Groq AI for 3D Modeler Agent...
+  📝 Output: **Game Asset Creation Request**
+
+**Character Model: "Eterna
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+🚀 Starting Game Development Pipeline...
+  
+--- Step 1: 3D Modeler Agent ---
+  Task: Create foundational game assets - character models, environment 
+  🤖 Using Groq AI for 3D Modeler Agent...
+  📝 Output: **Game Asset Creation Request**
+
+**Character Model: "Eterna
+     Confidence: 90%
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+--- Step 1: 3D Modeler Agent ---
+  Task: Create foundational game assets - character models, environment 
+  🤖 Using Groq AI for 3D Modeler Agent...
+  📝 Output: **Game Asset Creation Request**
+
+**Character Model: "Eterna
+     Confidence: 90%
+  🔐 Signed by: 3D Modeler Agent
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  Task: Create foundational game assets - character models, environment 
+  🤖 Using Groq AI for 3D Modeler Agent...
+  📝 Output: **Game Asset Creation Request**
+
+**Character Model: "Eterna
+     Confidence: 90%
+  🔐 Signed by: 3D Modeler Agent
+     Signature: 94572bc3c634a3d8670c...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🤖 Using Groq AI for 3D Modeler Agent...
+  📝 Output: **Game Asset Creation Request**
+
+**Character Model: "Eterna
+     Confidence: 90%
+  🔐 Signed by: 3D Modeler Agent
+     Signature: 94572bc3c634a3d8670c...
+     Hash: c34ac9ebfe9ea4e7...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: █░░░ 25%     │
+│  Completed: 1/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  📝 Output: **Game Asset Creation Request**
+
+**Character Model: "Eterna
+     Confidence: 90%
+  🔐 Signed by: 3D Modeler Agent
+     Signature: 94572bc3c634a3d8670c...
+     Hash: c34ac9ebfe9ea4e7...
+  ✅ Step 1 completed and attested
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Confidence: 90%
+  🔐 Signed by: 3D Modeler Agent
+     Signature: 94572bc3c634a3d8670c...
+     Hash: c34ac9ebfe9ea4e7...
+  ✅ Step 1 completed and attested
+  
+--- Step 2: Gameplay Programmer Agent ---
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🔐 Signed by: 3D Modeler Agent
+     Signature: 94572bc3c634a3d8670c...
+     Hash: c34ac9ebfe9ea4e7...
+  ✅ Step 1 completed and attested
+  
+--- Step 2: Gameplay Programmer Agent ---
+  Task: Implement core gameplay mechanics - player movement, combat syst
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: █░░░ 25%     │
+│  Completed: 1/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Signature: 94572bc3c634a3d8670c...
+     Hash: c34ac9ebfe9ea4e7...
+  ✅ Step 1 completed and attested
+  
+--- Step 2: Gameplay Programmer Agent ---
+  Task: Implement core gameplay mechanics - player movement, combat syst
+  🤖 Using Groq AI for Gameplay Programmer Agent...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Hash: c34ac9ebfe9ea4e7...
+  ✅ Step 1 completed and attested
+  
+--- Step 2: Gameplay Programmer Agent ---
+  Task: Implement core gameplay mechanics - player movement, combat syst
+  🤖 Using Groq AI for Gameplay Programmer Agent...
+  📝 Output: Below are some examples of how you could implement core gam
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  ✅ Step 1 completed and attested
+  
+--- Step 2: Gameplay Programmer Agent ---
+  Task: Implement core gameplay mechanics - player movement, combat syst
+  🤖 Using Groq AI for Gameplay Programmer Agent...
+  📝 Output: Below are some examples of how you could implement core gam
+     Confidence: 90%
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+--- Step 2: Gameplay Programmer Agent ---
+  Task: Implement core gameplay mechanics - player movement, combat syst
+  🤖 Using Groq AI for Gameplay Programmer Agent...
+  📝 Output: Below are some examples of how you could implement core gam
+     Confidence: 90%
+  🔐 Signed by: Gameplay Programmer Agent
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  Task: Implement core gameplay mechanics - player movement, combat syst
+  🤖 Using Groq AI for Gameplay Programmer Agent...
+  📝 Output: Below are some examples of how you could implement core gam
+     Confidence: 90%
+  🔐 Signed by: Gameplay Programmer Agent
+     Signature: 8b05fe9d15bfece4da4a...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🤖 Using Groq AI for Gameplay Programmer Agent...
+  📝 Output: Below are some examples of how you could implement core gam
+     Confidence: 90%
+  🔐 Signed by: Gameplay Programmer Agent
+     Signature: 8b05fe9d15bfece4da4a...
+     Hash: 3f1479b56e73df6f...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ██░░ 50%     │
+│  Completed: 2/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  📝 Output: Below are some examples of how you could implement core gam
+     Confidence: 90%
+  🔐 Signed by: Gameplay Programmer Agent
+     Signature: 8b05fe9d15bfece4da4a...
+     Hash: 3f1479b56e73df6f...
+  ✅ Step 2 completed and attested
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Confidence: 90%
+  🔐 Signed by: Gameplay Programmer Agent
+     Signature: 8b05fe9d15bfece4da4a...
+     Hash: 3f1479b56e73df6f...
+  ✅ Step 2 completed and attested
+  
+--- Step 3: UI/UX Designer Agent ---
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🔐 Signed by: Gameplay Programmer Agent
+     Signature: 8b05fe9d15bfece4da4a...
+     Hash: 3f1479b56e73df6f...
+  ✅ Step 2 completed and attested
+  
+--- Step 3: UI/UX Designer Agent ---
+  Task: Design and implement UI/UX - main menu, HUD, settings, and acces
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ██░░ 50%     │
+│  Completed: 2/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Signature: 8b05fe9d15bfece4da4a...
+     Hash: 3f1479b56e73df6f...
+  ✅ Step 2 completed and attested
+  
+--- Step 3: UI/UX Designer Agent ---
+  Task: Design and implement UI/UX - main menu, HUD, settings, and acces
+  🤖 Using Groq AI for UI/UX Designer Agent...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Hash: 3f1479b56e73df6f...
+  ✅ Step 2 completed and attested
+  
+--- Step 3: UI/UX Designer Agent ---
+  Task: Design and implement UI/UX - main menu, HUD, settings, and acces
+  🤖 Using Groq AI for UI/UX Designer Agent...
+  📝 Output: **Game Title:** "Epic Quest"
+
+**Overview:**
+The main menu, 
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  ✅ Step 2 completed and attested
+  
+--- Step 3: UI/UX Designer Agent ---
+  Task: Design and implement UI/UX - main menu, HUD, settings, and acces
+  🤖 Using Groq AI for UI/UX Designer Agent...
+  📝 Output: **Game Title:** "Epic Quest"
+
+**Overview:**
+The main menu, 
+     Confidence: 90%
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+--- Step 3: UI/UX Designer Agent ---
+  Task: Design and implement UI/UX - main menu, HUD, settings, and acces
+  🤖 Using Groq AI for UI/UX Designer Agent...
+  📝 Output: **Game Title:** "Epic Quest"
+
+**Overview:**
+The main menu, 
+     Confidence: 90%
+  🔐 Signed by: UI/UX Designer Agent
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  Task: Design and implement UI/UX - main menu, HUD, settings, and acces
+  🤖 Using Groq AI for UI/UX Designer Agent...
+  📝 Output: **Game Title:** "Epic Quest"
+
+**Overview:**
+The main menu, 
+     Confidence: 90%
+  🔐 Signed by: UI/UX Designer Agent
+     Signature: 8f473930cdf8a6ae3cd7...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🤖 Using Groq AI for UI/UX Designer Agent...
+  📝 Output: **Game Title:** "Epic Quest"
+
+**Overview:**
+The main menu, 
+     Confidence: 90%
+  🔐 Signed by: UI/UX Designer Agent
+     Signature: 8f473930cdf8a6ae3cd7...
+     Hash: 78efb43604340bb4...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ███░ 75%     │
+│  Completed: 3/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  📝 Output: **Game Title:** "Epic Quest"
+
+**Overview:**
+The main menu, 
+     Confidence: 90%
+  🔐 Signed by: UI/UX Designer Agent
+     Signature: 8f473930cdf8a6ae3cd7...
+     Hash: 78efb43604340bb4...
+  ✅ Step 3 completed and attested
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Confidence: 90%
+  🔐 Signed by: UI/UX Designer Agent
+     Signature: 8f473930cdf8a6ae3cd7...
+     Hash: 78efb43604340bb4...
+  ✅ Step 3 completed and attested
+  
+--- Step 4: Animation Agent ---
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🔐 Signed by: UI/UX Designer Agent
+     Signature: 8f473930cdf8a6ae3cd7...
+     Hash: 78efb43604340bb4...
+  ✅ Step 3 completed and attested
+  
+--- Step 4: Animation Agent ---
+  Task: Add character animations and visual effects - walk cycles, attac
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ███░░░░░ 75%     │
+│  Completed: 3/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Signature: 8f473930cdf8a6ae3cd7...
+     Hash: 78efb43604340bb4...
+  ✅ Step 3 completed and attested
+  
+--- Step 4: Animation Agent ---
+  Task: Add character animations and visual effects - walk cycles, attac
+  🤖 Using Groq AI for Animation Agent...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Hash: 78efb43604340bb4...
+  ✅ Step 3 completed and attested
+  
+--- Step 4: Animation Agent ---
+  Task: Add character animations and visual effects - walk cycles, attac
+  🤖 Using Groq AI for Animation Agent...
+  📝 Output: **Character Animation and Visual Effects**
+
+To create a smo
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  ✅ Step 3 completed and attested
+  
+--- Step 4: Animation Agent ---
+  Task: Add character animations and visual effects - walk cycles, attac
+  🤖 Using Groq AI for Animation Agent...
+  📝 Output: **Character Animation and Visual Effects**
+
+To create a smo
+     Confidence: 90%
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+--- Step 4: Animation Agent ---
+  Task: Add character animations and visual effects - walk cycles, attac
+  🤖 Using Groq AI for Animation Agent...
+  📝 Output: **Character Animation and Visual Effects**
+
+To create a smo
+     Confidence: 90%
+  🔐 Signed by: Animation Agent
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  Task: Add character animations and visual effects - walk cycles, attac
+  🤖 Using Groq AI for Animation Agent...
+  📝 Output: **Character Animation and Visual Effects**
+
+To create a smo
+     Confidence: 90%
+  🔐 Signed by: Animation Agent
+     Signature: ff8ede267885fda34257...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🤖 Using Groq AI for Animation Agent...
+  📝 Output: **Character Animation and Visual Effects**
+
+To create a smo
+     Confidence: 90%
+  🔐 Signed by: Animation Agent
+     Signature: ff8ede267885fda34257...
+     Hash: c9041043ef30caae...
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ████░░░░ 100%     │
+│  Completed: 4/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  📝 Output: **Character Animation and Visual Effects**
+
+To create a smo
+     Confidence: 90%
+  🔐 Signed by: Animation Agent
+     Signature: ff8ede267885fda34257...
+     Hash: c9041043ef30caae...
+  ✅ Step 4 completed and attested
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Confidence: 90%
+  🔐 Signed by: Animation Agent
+     Signature: ff8ede267885fda34257...
+     Hash: c9041043ef30caae...
+  ✅ Step 4 completed and attested
+  
+╔═══════════════════════════════════════════════════════════╗
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  🔐 Signed by: Animation Agent
+     Signature: ff8ede267885fda34257...
+     Hash: c9041043ef30caae...
+  ✅ Step 4 completed and attested
+  
+╔═══════════════════════════════════════════════════════════╗
+  ║         🎮 GAME DEVELOPMENT COMPLETE 🎮                  ║
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Signature: ff8ede267885fda34257...
+     Hash: c9041043ef30caae...
+  ✅ Step 4 completed and attested
+  
+╔═══════════════════════════════════════════════════════════╗
+  ║         🎮 GAME DEVELOPMENT COMPLETE 🎮                  ║
+  ╚═══════════════════════════════════════════════════════════╝
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+     Hash: c9041043ef30caae...
+  ✅ Step 4 completed and attested
+  
+╔═══════════════════════════════════════════════════════════╗
+  ║         🎮 GAME DEVELOPMENT COMPLETE 🎮                  ║
+  ╚═══════════════════════════════════════════════════════════╝
+  Project: Neon Warriors - Action RPG Prototype
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  ✅ Step 4 completed and attested
+  
+╔═══════════════════════════════════════════════════════════╗
+  ║         🎮 GAME DEVELOPMENT COMPLETE 🎮                  ║
+  ╚═══════════════════════════════════════════════════════════╝
+  Project: Neon Warriors - Action RPG Prototype
+  Pipeline: 4 steps completed
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  
+╔═══════════════════════════════════════════════════════════╗
+  ║         🎮 GAME DEVELOPMENT COMPLETE 🎮                  ║
+  ╚═══════════════════════════════════════════════════════════╝
+  Project: Neon Warriors - Action RPG Prototype
+  Pipeline: 4 steps completed
+  Team: 4 AI agents
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: RUNNING  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Recent logs:
+  ║         🎮 GAME DEVELOPMENT COMPLETE 🎮                  ║
+  ╚═══════════════════════════════════════════════════════════╝
+  Project: Neon Warriors - Action RPG Prototype
+  Pipeline: 4 steps completed
+  Team: 4 AI agents
+  All deliverables signed with Ed25519 attestations
+
+
+╔════════════════════════════════════════════════════════════╗
+║          🎮 Gaming Studio Multi-Agent System                ║
+║              AI-Powered Game Development                   ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────┐
+│                  4-AGENT GAME DEV TEAM                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│
+│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││
+│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││
+│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│
+│                                                             │
+│  Status: COMPLETED  Progress: ░░░░ 0%     │
+│  Completed: 0/4 steps                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘

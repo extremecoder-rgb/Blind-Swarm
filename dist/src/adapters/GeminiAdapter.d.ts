@@ -1,4 +1,4 @@
-import { type AIAdapter, type ExecutionResult } from './MockAdapter.js';
+import { type AIAdapter, type ExecutionResult } from './types.js';
 /**
  * Real production implementation of the Gemini API adapter for BlindSwarm.
  * Uses the Google Generative AI SDK to perform private inference for agents.
@@ -15,7 +15,7 @@ export declare class GeminiAdapter implements AIAdapter {
  */
 export declare function createGeminiAdapter(apiKey: string, model?: string, systemPrompt?: string): GeminiAdapter;
 /**
- * Default prompts for the demo scenario to ensure high quality analysis.
+ * Default prompts for the gaming studio demo scenario.
  */
 export declare const AGENT_PROMPTS: Record<string, string>;
 //# sourceMappingURL=GeminiAdapter.d.ts.map

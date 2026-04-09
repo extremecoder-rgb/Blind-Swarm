@@ -24,8 +24,7 @@ export class Orchestrator {
     
     const clientModule = await import('../client/index.js');
     this.client = await clientModule.createClient({
-        walletPrivateKey: this.config.walletPrivateKey,
-        contractAddress: this.config.contractAddress,
+        seed: this.config.walletPrivateKey,
     });
     
     // Crucial: Initialize the real wallet

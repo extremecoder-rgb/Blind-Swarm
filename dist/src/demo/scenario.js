@@ -1,22 +1,32 @@
-export function createDemoScenario() {
+export function createDeFiAnalyticsScenario() {
     const agents = [
         {
-            id: 'agent_market',
-            name: 'Market Analysis Agent',
-            capability: 'market_analysis',
-            description: 'Analyzes market trends and provides investment recommendations',
+            id: 'agent_fetcher',
+            name: 'On-Chain Fetcher',
+            capability: 'fetcher',
+            description: 'Fetches real-time pool data, TVL, token prices, gas fees from Midnight node',
+            role: 'Data Collector',
         },
         {
             id: 'agent_risk',
-            name: 'Risk Analysis Agent',
-            capability: 'risk_analysis',
-            description: 'Evaluates risks associated with investment recommendations',
+            name: 'Risk Analyst',
+            capability: 'risk',
+            description: 'Analyzes protocol risks, impermanent loss, smart contract exposure, and audit status',
+            role: 'Risk Assessment',
         },
         {
-            id: 'agent_compliance',
-            name: 'Compliance Agent',
-            capability: 'compliance',
-            description: 'Validates compliance with regulatory requirements',
+            id: 'agent_yield',
+            name: 'Yield Optimizer',
+            capability: 'yield',
+            description: 'Calculates yield strategies, APY comparisons, and rebalancing recommendations',
+            role: 'Strategy Engine',
+        },
+        {
+            id: 'agent_report',
+            name: 'Report Generator',
+            capability: 'report',
+            description: 'Generates comprehensive dashboard reports with alerts and recommendations',
+            role: 'Output Writer',
         },
     ];
     const dag = {
@@ -24,25 +34,31 @@ export function createDemoScenario() {
             {
                 index: 0,
                 dependencies: [],
-                description: 'Analyze market conditions and provide investment recommendation',
+                description: 'Fetch real-time on-chain data - pool reserves, token prices, volume, gas fees',
             },
             {
                 index: 1,
                 dependencies: [0],
-                description: 'Evaluate risks of the proposed investment',
+                description: 'Analyze protocol risk profile - TVL concentration, audit status, exploit history, volatility',
             },
             {
                 index: 2,
-                dependencies: [0, 1],
-                description: 'Validate compliance with regulatory requirements',
+                dependencies: [0],
+                description: 'Calculate optimal yield strategies - APY comparison, impermanent loss, incentive rewards',
+            },
+            {
+                index: 3,
+                dependencies: [1, 2],
+                description: 'Generate final analytics report with risk-adjusted recommendations and alerts',
             },
         ],
     };
     return {
         agents,
         dag,
-        expectedOutcome: 'All 3 steps completed with valid attestations on-chain',
+        expectedOutcome: 'Complete DeFi analytics report with risk assessment and yield recommendations',
+        projectName: 'Midnight DeFi Analytics Engine',
     };
 }
-export const DEMO_SCENARIO = createDemoScenario();
+export const SCENARIO = createDeFiAnalyticsScenario();
 //# sourceMappingURL=scenario.js.map

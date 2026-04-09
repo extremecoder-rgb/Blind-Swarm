@@ -57,4 +57,9 @@ export function hexToUint8Array(hex) {
 export function uint8ArrayToHex(arr) {
     return Buffer.from(arr).toString('hex');
 }
+export async function hashMessage(message) {
+    const crypto = await import('@noble/hashes/sha256');
+    const hash = crypto.sha256(new TextEncoder().encode(message));
+    return uint8ArrayToHex(hash);
+}
 //# sourceMappingURL=signature.js.map

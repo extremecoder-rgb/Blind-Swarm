@@ -1,15 +1,18 @@
-export interface DemoConfig {
+export interface Config {
     showTUI: boolean;
     geminiApiKey: string;
+    groqApiKey?: string;
+    useMockAI?: boolean;
     onUpdate?: (state: any) => void;
 }
-export declare class DemoRunner {
-    private config;
-    private dashboard;
-    private logs;
-    constructor(config: DemoConfig);
-    private addLog;
-    run(): Promise<void>;
+export interface AgentData {
+    id: string;
+    name: string;
+    capability: string;
+    role: string;
+    publicKey: string;
+    privateKey: string;
 }
-export declare function runDemo(config?: Partial<DemoConfig>): Promise<void>;
+export declare function runPipeline(config?: Partial<Config>): Promise<void>;
+export declare function runDemo(config?: Partial<Config>): Promise<void>;
 //# sourceMappingURL=index.d.ts.map

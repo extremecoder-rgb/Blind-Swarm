@@ -1,43 +1,58 @@
 export class Dashboard {
     running = false;
+    agentCount = 4;
     async render() {
         this.running = true;
         console.log('\n');
         console.log('╔════════════════════════════════════════════════════════════╗');
-        console.log('║          BlindSwarm - Multi-Agent Orchestration            ║');
-        console.log('║              Privacy-Preserving AI Protocol               ║');
-        console.log('╚════════════════════════════════════════════════════════════╝');
+        console.log('║          🎮 Gaming Studio Multi-Agent System                ║');
+        console.log('║              AI-Powered Game Development                   ║');
+        console.log('╚═══════════════════════════════════════════════════════════╝');
         console.log('\n');
     }
     update(progress) {
         if (!this.running)
             return;
+        const totalSteps = progress.steps?.length || 4;
+        const completedSteps = progress.steps?.filter(s => s.status === 'completed').length || 0;
+        const pendingSteps = progress.steps?.filter(s => s.status === 'pending').length || totalSteps;
+        const assignedSteps = progress.steps?.filter(s => s.status === 'assigned').length || 0;
         console.clear();
         console.log('\n');
         console.log('╔════════════════════════════════════════════════════════════╗');
-        console.log('║          BlindSwarm - Multi-Agent Orchestration            ║');
-        console.log('║              Privacy-Preserving AI Protocol               ║');
-        console.log('╚════════════════════════════════════════════════════════════╝');
+        console.log('║          🎮 Gaming Studio Multi-Agent System                ║');
+        console.log('║              AI-Powered Game Development                   ║');
+        console.log('╚═══════════════════════════════════════════════════════════╝');
         console.log('\n');
         console.log('┌─────────────────────────────────────────────────────────────┐');
-        console.log('│                    3-AGENT DEMO VIEW                        │');
+        console.log('│                  4-AGENT GAME DEV TEAM                     │');
         console.log('├─────────────────────────────────────────────────────────────┤');
         console.log('│                                                             │');
-        console.log('│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐  │');
-        console.log('│  │   AGENT 1    │───▶│   AGENT 2    │───▶│   AGENT 3    │  │');
-        console.log('│  │ Market       │    │ Risk         │    │ Compliance   │  │');
-        console.log('│  │ Analysis     │    │ Analysis     │    │ Decision     │  │');
-        console.log('│  └──────────────┘    └──────────────┘    └──────────────┘  │');
+        console.log('│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│');
+        console.log('│  │    MODELER   │▶│    CODER     │▶│   DESIGNER   │▶│ ANI││');
+        console.log('│  │   (3D Art)   │ │ (Gameplay)   │ │   (UI/UX)    │ │MAT ││');
+        console.log('│  └──────────────┘ └──────────────┘ └──────────────┘ └────┘│');
         console.log('│                                                             │');
         const status = progress.status || 'RUNNING';
-        const step = progress.steps?.filter(s => s.status === 'completed').length || 0;
-        const progressBar = '█'.repeat(step) + '░'.repeat(3 - step);
-        console.log(`│  Status: ● ${status.padEnd(9)} Step: ${step}/3   Progress: ${progressBar} ${Math.round(step / 3 * 100)}%   │`);
+        const progressBar = '█'.repeat(completedSteps) + '░'.repeat(pendingSteps + assignedSteps);
+        console.log(`│  Status: ${status}  Progress: ${progressBar} ${Math.round(completedSteps / totalSteps * 100)}%     │`);
+        console.log(`│  Completed: ${completedSteps}/${totalSteps} steps                              │`);
         console.log('│                                                             │');
         console.log('└─────────────────────────────────────────────────────────────┘');
         if (progress.logs && progress.logs.length > 0) {
             console.log('\nRecent logs:');
-            progress.logs.slice(-5).forEach(log => console.log(`  ${log}`));
+            const recentLogs = progress.logs.slice(-6);
+            recentLogs.forEach(log => {
+                if (log.startsWith('---')) {
+                    console.log(`  ${log}`);
+                }
+                else if (log.includes('✓') || log.includes('✅')) {
+                    console.log(`  ${log}`);
+                }
+                else {
+                    console.log(`  ${log.substring(0, 70)}`);
+                }
+            });
         }
     }
     addLog(log) {

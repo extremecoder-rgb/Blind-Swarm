@@ -1,17 +1,32 @@
 import 'dotenv/config';
 import { createServer } from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
-import { runDemo } from './demo/index.js';
-const PORT = 8081;
+import { runPipeline } from './demo/index.js';
+const PORT = 5001;
 const server = createServer((req, res) => {
-    // basic CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
-    if (req.url === '/api/start' && req.method === 'POST') {
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') {
+        res.writeHead(200);
+        res.end();
+        return;
+    }
+    if (req.url === '/api/status' && req.method === 'GET') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, message: 'Demo started. Subscribe to WebSocket for updates.' }));
-        runDemo({
+        res.end(JSON.stringify({
+            status: 'ready',
+            chain: 'midnight',
+            network: 'local'
+        }));
+    }
+    else if (req.url === '/api/start' && req.method === 'POST') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, message: 'Pipeline started. Connect to WebSocket for real-time updates.' }));
+        runPipeline({
             showTUI: false,
             geminiApiKey: process.env.GEMINI_API_KEY,
+            groqApiKey: process.env.GROQ_API_KEY,
             onUpdate: (state) => {
                 const payload = JSON.stringify(state);
                 wss.clients.forEach((client) => {
@@ -21,7 +36,7 @@ const server = createServer((req, res) => {
                 });
             }
         }).catch(err => {
-            console.error('Demo Error:', err);
+            console.error('Pipeline Error:', err);
         });
     }
     else {
@@ -32,10 +47,10 @@ const server = createServer((req, res) => {
 const wss = new WebSocketServer({ server });
 wss.on('connection', (ws) => {
     console.log('Client connected to WebSocket.');
-    ws.send(JSON.stringify({ message: 'Connected to Midnight System...' }));
+    ws.send(JSON.stringify({ message: '🔗 Connected to Midnight DeFi Pipeline...' }));
 });
 server.listen(PORT, () => {
-    console.log(`Backend API Server running at http://localhost:${PORT}`);
-    console.log(`WebSocket Server attached to ws://localhost:${PORT}`);
+    console.log(`🔧 Backend API: http://localhost:${PORT}`);
+    console.log(`📡 WebSocket: ws://localhost:${PORT}`);
 });
 //# sourceMappingURL=server.js.map

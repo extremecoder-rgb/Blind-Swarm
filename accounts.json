@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "name": "BlindSwarmMaster",
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon art"
+    },
+    {
+      "name": "Agent1",
+      "mnemonic": "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo vote"
+    },
+    {
+      "name": "Agent2",
+      "mnemonic": "camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera camera repair"
+    },
+    {
+      "name": "Agent3",
+      "mnemonic": "letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter letter gift"
+    }
+  ]
+}

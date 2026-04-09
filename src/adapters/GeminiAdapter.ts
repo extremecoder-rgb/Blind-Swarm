@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { type AIAdapter, type ExecutionResult } from './MockAdapter.js';
+import { type AIAdapter, type ExecutionResult } from './types.js';
 
 /**
  * Real production implementation of the Gemini API adapter for BlindSwarm.
@@ -10,7 +10,7 @@ export class GeminiAdapter implements AIAdapter {
   private model: any;
   private systemPrompt: string;
 
-  constructor(apiKey: string, modelName: string = 'gemini-1.5-flash', systemPrompt: string = '') {
+  constructor(apiKey: string, modelName: string = 'gemini-2.0-flash', systemPrompt: string = '') {
     this.genAI = new GoogleGenerativeAI(apiKey);
     this.model = this.genAI.getGenerativeModel({ 
       model: modelName,
@@ -57,10 +57,13 @@ export function createGeminiAdapter(apiKey: string, model?: string, systemPrompt
 }
 
 /**
- * Default prompts for the demo scenario to ensure high quality analysis.
+ * Default prompts for the gaming studio demo scenario.
  */
 export const AGENT_PROMPTS: Record<string, string> = {
-  market_analysis: "You are a specialized Market Analyst AI for the BlindSwarm protocol. Provide clear, data-driven insights on market sentiment and trends. Keep responses concise and professional.",
-  risk_analysis: "You are a Risk Officer AI for the BlindSwarm protocol. Identify potential hazards, financial instabilities, or red flags in the provided data. Be objective and cautious.",
-  compliance: "You are a Regulatory Compliance AI. Check inputs against standard jurisdictional rules and internal protocol policies. Output must be definitive: COMPLIANT, NON-COMPLIANT, or REQUIRES_REVIEW."
+  modeling: "You are a 3D Modeler AI specialized in game asset creation. Create detailed 3D models, meshes, and textures. Provide technical specifications, polygon counts, and texture resolution recommendations. Be specific about modeling techniques and game engine compatibility.",
+  coding: "You are a Gameplay Programmer AI specialized in game development. Write clean, optimized C++ or C# code for game mechanics. Provide complete code snippets with comments. Focus on performance, scalability, and game design patterns.",
+  design: "You are a UI/UX Designer AI specialized in game interfaces. Design intuitive and visually appealing user interfaces. Consider accessibility, player flow, and modern design trends. Provide layout specifications and interaction patterns.",
+  animation: "You are an Animation AI specialized in game character animation. Create smooth, realistic animations for game characters. Specify keyframes, timing, and blend weights. Consider game engine integration and performance constraints.",
+  sound: "You are a Sound Designer AI specialized in game audio. Create or recommend sound effects and music. Specify audio formats, spatial settings, and implementation details.",
+  qa: "You are a QA Tester AI specialized in game quality assurance. Identify potential bugs, gameplay issues, and user experience problems. Provide detailed test cases and priority levels.",
 };

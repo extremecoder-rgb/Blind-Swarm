@@ -75,3 +75,9 @@ export function hexToUint8Array(hex: string): Uint8Array {
 export function uint8ArrayToHex(arr: Uint8Array): string {
   return Buffer.from(arr).toString('hex');
 }
+
+export async function hashMessage(message: string): Promise<string> {
+  const crypto = await import('@noble/hashes/sha256');
+  const hash = crypto.sha256(new TextEncoder().encode(message));
+  return uint8ArrayToHex(hash);
+}

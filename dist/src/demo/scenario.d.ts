@@ -1,15 +1,17 @@
 import type { DAG } from '../types/index.js';
-export interface DemoAgent {
+export interface Agent {
     id: string;
     name: string;
-    capability: string;
+    capability: 'fetcher' | 'risk' | 'yield' | 'report';
     description: string;
+    role: string;
 }
-export interface DemoScenario {
-    agents: DemoAgent[];
+export interface Scenario {
+    agents: Agent[];
     dag: DAG;
     expectedOutcome: string;
+    projectName: string;
 }
-export declare function createDemoScenario(): DemoScenario;
-export declare const DEMO_SCENARIO: DemoScenario;
+export declare function createDeFiAnalyticsScenario(): Scenario;
+export declare const SCENARIO: Scenario;
 //# sourceMappingURL=scenario.d.ts.map

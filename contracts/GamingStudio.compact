@@ -1,0 +1,149 @@
+pragma language_version 0.22.0;
+
+import CompactStandardLibrary;
+
+// Agent types for gaming studio
+enum AgentCapability {
+    MODELING,
+    CODING,
+    DESIGN,
+    ANIMATION,
+    SOUND,
+    QA
+}
+
+// State structures
+export struct GameAsset {
+    owner: Bytes<32>;
+    asset_type: Uint<8>;  // AgentCapability enum as uint
+    content_hash: Bytes<32>;
+    metadata: Bytes<64>;
+    created_at: Uint<64>;
+}
+
+export struct ProjectMilestone {
+    owner: Bytes<32>;
+    title: Bytes<32>;
+    status: Uint<8>;  // 0=pending, 1=in_progress, 2=completed
+    deliverables_hash: Bytes<32>;
+    due_date: Uint<64>;
+}
+
+export struct AssetAttestation {
+    agent_id: Bytes<32>;
+    asset_hash: Bytes<32>;
+    signature: Bytes<64>;
+    timestamp: Uint<64>;
+}
+
+// Global State - Game Development Assets
+export ledger assets: Map<Bytes<32>, GameAsset>;
+export ledger milestones: Map<Bytes<16>, ProjectMilestone>;
+export ledger attestations: Map<Bytes<32>, AssetAttestation>;
+
+// Witness: caller provides their secret key off-chain
+witness secretKey(): Bytes<32>;
+
+// Helper: derive a stable public identity from secret key
+circuit callerPk(): Bytes<32> {
+    const sk = secretKey();
+    return persistentHash<Vector<2, Bytes<32>>>(
+        [pad(32, "gaming-studio:pk"), sk]
+    );
+}
+
+// Helper: derive asset map key
+circuit assetKey(asset_type: Uint<8>, creator: Bytes<32>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<32>>>(
+        [pad(32, "asset"), pad(32, "gaming-studio")]
+    );
+}
+
+// Helper: derive attestation key
+circuit attestationKey(asset_hash: Bytes<32>, agent_id: Bytes<32>): Bytes<32> {
+    return persistentHash<Vector<2, Bytes<32>>>(
+        [asset_hash, agent_id]
+    );
+}
+
+// Contract initialization - required for deployment
+export contract GamingStudio() {
+    // Initialize empty state - required for contract deployment
+    // The contract starts with no assets, no milestones, no attestations
+}
+
+// Register a new development asset (model, code, design, animation)
+export circuit register_asset(
+    asset_type: Uint<8>,
+    content_hash: Bytes<32>,
+    metadata: Bytes<64>
+): [] {
+    const sender: Bytes<32> = callerPk();
+    const key: Bytes<32> = assetKey(asset_type, sender);
+    const timestamp: Uint<64> = 0;  // Would use block time in production
+    
+    assets.insert(disclose(key), GameAsset {
+        owner: disclose(sender),
+        asset_type: disclose(asset_type),
+        content_hash: disclose(content_hash),
+        metadata: disclose(metadata),
+        created_at: disclose(timestamp)
+    });
+}
+
+// Create a project milestone (phase of development)
+export circuit create_milestone(
+    milestone_id: Bytes<16>,
+    title: Bytes<32>,
+    deliverables_hash: Bytes<32>,
+    due_date: Uint<64>
+): [] {
+    const sender: Bytes<32> = callerPk();
+    
+    milestones.insert(disclose(milestone_id), ProjectMilestone {
+        owner: disclose(sender),
+        title: disclose(title),
+        status: disclose(0),  // pending
+        deliverables_hash: disclose(deliverables_hash),
+        due_date: disclose(due_date)
+    });
+}
+
+// Update milestone status
+export circuit update_milestone(
+    milestone_id: Bytes<16>,
+    new_status: Uint<8>,
+    final_deliverables_hash: Bytes<32>
+): [] {
+    const sender: Bytes<32> = callerPk();
+    
+    // Only the owner can update
+    const milestone = milestones.lookup(disclose(milestone_id));
+    require(milestone.owner == sender, "Only milestone owner can update");
+    
+    // Update the milestone
+    milestones.insert(disclose(milestone_id), ProjectMilestone {
+        owner: milestone.owner,
+        title: milestone.title,
+        status: disclose(new_status),
+        deliverables_hash: disclose(final_deliverables_hash),
+        due_date: milestone.due_date
+    });
+}
+
+// Submit attestation for a delivered asset
+export circuit attest_asset(
+    asset_hash: Bytes<32>,
+    signature: Bytes<64>
+): [] {
+    const sender: Bytes<32> = callerPk();
+    const key: Bytes<32> = attestationKey(asset_hash, sender);
+    const timestamp: Uint<64> = 0;  // Would use block time in production
+    
+    attestations.insert(disclose(key), AssetAttestation {
+        agent_id: disclose(sender),
+        asset_hash: disclose(asset_hash),
+        signature: disclose(signature),
+        timestamp: disclose(timestamp)
+    });
+}

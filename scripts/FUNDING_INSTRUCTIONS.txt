@@ -1,0 +1,22 @@
+#!/bin/bash
+# Quick funding script - expects midnight-local-dev to be running
+
+MNEMONIC="trumpet pioneer slide later awful diet bubble special fitness will zebra canvas alcohol disagree vibrant coin gauge evidence ski black float neutral sock about"
+
+echo "=== Midnight Wallet Funding ==="
+echo ""
+echo "Using mnemonic: $MNEMONIC"
+echo ""
+echo "Your wallet address should be:"
+echo "mn_addr_undeployed1c7vkra29k6g8emdk60yhsduhxufrfra3p460254gzl9ceatu9j5scddy7d"
+echo ""
+echo "To fund your wallet:"
+echo "1. Go to C:/midnight-local-dev"
+echo "2. Run: npm start"
+echo "3. Select option 2: Fund accounts by public key"
+echo "4. Enter your address above"
+echo ""
+echo "The local network should already be running with:"
+echo "- Node: http://localhost:9944"
+echo "- Indexer: http://localhost:8088"
+echo "- Proof Server: http://localhost:6300"

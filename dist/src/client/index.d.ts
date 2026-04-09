@@ -1,38 +1,31 @@
 import 'dotenv/config';
 export interface ClientConfig {
-    providerUrl: string;
-    indexerUrl: string;
-    seed: string;
+    seed?: string;
     mnemonicPhrase?: string;
-    contractAddress?: string;
+    zkConfigPath?: string;
 }
 export interface DeployResult {
     contractAddress: string;
     transactionId: string;
 }
-/**
- * BlindSwarm Real Production Client (SDK Pure)
- */
-declare class MidnightClient {
+export declare class MidnightClient {
     private config;
-    private providers;
     private wallet;
+    private providers;
     private contract;
+    private seed;
+    private shieldedSecretKeys;
+    private dustSecretKey;
+    private unshieldedKeystore;
     constructor(config: ClientConfig);
-    /**
-     * Initialize the real HD Wallet.
-     * Supports both a pre-derived 64-char hex seed OR a 24-word mnemonic phrase.
-     */
     initWallet(): Promise<void>;
+    private createWalletAndMidnightProvider;
     get walletAddress(): string;
-    /**
-     * ACTUAL deployment of the provided contract logic.
-     */
-    deployContract(compiledContract: any): Promise<DeployResult>;
-    /**
-     * ACTUAL joining of an existing contract.
-     */
-    joinContract(compiledContract: any, contractAddress: string): Promise<void>;
+    getBalance(): Promise<{
+        tNight: bigint;
+        dust: bigint;
+    }>;
+    deployContract(): Promise<DeployResult>;
     registerAgent(capabilities: string[], stake: bigint): Promise<{
         agentId: string;
     }>;
@@ -45,7 +38,7 @@ declare class MidnightClient {
     }>;
     getContractState(): Promise<any>;
     watchEvent(eventName: string, handler: (data: any) => void): void;
+    stop(): Promise<void>;
 }
-export declare function createClient(config: any): Promise<MidnightClient>;
-export { MidnightClient };
+export declare function createClient(config?: ClientConfig): Promise<MidnightClient>;
 //# sourceMappingURL=index.d.ts.map
