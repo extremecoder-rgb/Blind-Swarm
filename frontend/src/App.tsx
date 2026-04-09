@@ -182,7 +182,7 @@ function App() {
 
   const generateReportText = () => {
     const lines = [
-      '# Midnight DeFi Analytics Report',
+      '# LUMINANCE Protocol Analysis Report',
       `**Generated:** ${new Date().toLocaleString()}`,
       '',
       '---',
@@ -264,8 +264,8 @@ function App() {
               <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#00f5ff"/><stop offset="100%" stopColor="#8b5cf6"/></linearGradient></defs>
             </svg>
           </div>
-          <span className="brand-text">MIDNIGHT</span>
-          <span className="brand-sub">DEFI ANALYTICS</span>
+          <span className="brand-text">LUMINANCE</span>
+          <span className="brand-sub">AI ORCHESTRATION</span>
         </div>
         
         <div className="nav-center">
@@ -577,7 +577,7 @@ function App() {
 
       <footer className="footer">
         <div className="footer-left">
-          <span className="footer-brand">Midnight DeFi Analytics</span>
+          <span className="footer-brand">LUMINANCE Protocol</span>
           <span className="footer-version">v1.0.0</span>
         </div>
         <div className="footer-right">

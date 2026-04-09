@@ -1,6 +1,6 @@
-# BlindSwarm - Nightforge Local Development Guide
+# LUMINANCE - Nightforge Local Development Guide
 
-This guide shows how to run BlindSwarm with Nightforge for real Midnight network operations (no mocks).
+This guide shows how to run Luminance with Nightforge for real Midnight network operations (no mocks).
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ This guide shows how to run BlindSwarm with Nightforge for real Midnight network
 
 ```
 ┌─────────────────────────────────────────────┐
-│            BlindSwarm DApp                   │
+│              Luminance DApp                   │
 │         (src/client/index.ts)               │
 └──────────────────┬──────────────────────────┘
                    │ connects via WalletFacade

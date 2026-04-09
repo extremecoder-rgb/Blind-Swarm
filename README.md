@@ -1,216 +1,161 @@
-# BlindSwarm 🕸️
+# 🛡️ LUMINANCE
+**Secure, Privacy-Preserving Multi-Agent AI Orchestration on the Midnight Network**
 
-**Privacy-Preserving Multi-Agent AI Orchestration on Midnight Network**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Midnight Network](https://img.shields.io/badge/Built%20on-Midnight-blueviolet)](https://midnight.network/)
+[![AI Ready](https://img.shields.io/badge/AI-Gemini%201.5%20Flash-blue)](https://deepmind.google/technologies/gemini/)
 
-A hackathon-ready implementation featuring:
-- 🔐 **Real Ed25519 Cryptographic Signatures** - Each agent has real keypairs
-- 🔒 **ECDH Encryption** - End-to-end encrypted agent communication
-- 🤖 **Gemini 1.5 Flash Integration** - Live AI for Market/Risk/Compliance analysis
-- ⛓️ **Midnight Network Ready** - Can deploy to testnet with real ZK proofs
-- 📊 **Luminance Studio Web Dashboard** - Beautiful React/Vite visualization
-- 🖥️ **Live TUI Dashboard** - Optional terminal visualization for CLI users
-- 🌐 **Express & WebSocket API** - Real-time orchestration updates via socket stream
+## 📖 Overview
 
-## Quick Start
+**LUMINANCE** is a decentralized orchestration protocol designed to coordinate autonomous AI agents while maintaining absolute data privacy. Built on the **Midnight Network**, Luminance leverages Zero-Knowledge (ZK) proofs and cryptographic attestations to ensure that sensitive agent logic and intermediate data remain shielded from the public ledger, while providing verifiable execution of complex multi-step workflows.
 
+In a world where AI agents increasingly handle confidential financial, personal, and corporate data, **LUMINANCE** provides the infrastructure for "Blind Collaboration"—allowing agents to work together without ever compromising the underlying privacy of the users they serve.
+
+---
+
+## ✨ Key Pillars
+
+### 🔐 Cryptographic Agent Identity
+Every agent in the Luminance network is assigned a unique **Ed25519 keypair**. All outputs, attestations, and state transitions are cryptographically signed, ensuring non-repudiation and a verifiable audit trail without exposing the agent's internal prompt or logic.
+
+### 🔒 End-to-End Privacy (ECDH + AES)
+Luminance implements a peer-to-peer encryption layer. Agents use **Elliptic Curve Diffie-Hellman (ECDH)** to establish shared secrets, enabling end-to-end encrypted communication via AES-256-GCM. Data is only decrypted by the intended recipient agent, never touching the blockchain in plaintext.
+
+### ⛓️ Midnight ZK Integration
+By utilizing the **Midnight Compact** language, the Luminance protocol defines private state transitions that are proven via ZK-SNARKs. This allows the network to verify that an agent followed the "Rules of the Swarm" (e.g., stake requirements, compliance checks) without revealing the specific details of the transaction.
+
+### 🤖 Generative AI Core
+Powered by **Google Gemini 1.5 Flash**, Luminance agents are capable of high-reasoning tasks including market analysis, risk assessment, and regulatory compliance. The architecture is modular, supporting any LLM provider via a standardized adapter pattern.
+
+---
+
+## 🏗️ Architecture
+
+Luminance follows a modular DAG (Directed Acyclic Graph) orchestration model:
+
+```mermaid
+graph TD
+    User((User)) -->|Submit Task| Orchestrator[Luminance Orchestrator]
+    Orchestrator -->|Private State| Midnight((Midnight Network))
+    
+    subgraph "The Swarm"
+        A1[Agent: Market] <-->|Encrypted ECDH| A2[Agent: Risk]
+        A2 <-->|Encrypted ECDH| A3[Agent: Compliance]
+    end
+    
+    A1 -.->|Sign| S1[Attestation]
+    A2 -.->|Sign| S2[Attestation]
+    A3 -.->|Sign| S3[Attestation]
+    
+    S1 & S2 & S3 -->|Commit| Midnight
+    Midnight -->|ZK Proof| User
+```
+
+---
+
+## 🚀 Quick Start
+
+### 1. Prerequisites
+- **Node.js**: v18+
+- **Docker**: Required for the Midnight Proof Server.
+- **Gemini API Key**: Obtain from [Google AI Studio](https://aistudio.google.com/).
+
+### 2. Installation
 ```bash
+# Clone the repository
+git clone https://github.com/extremecoder-rgb/Blind-Swarm.git luminancce
+cd luminance
+
 # Install dependencies
 npm install
 
-# Build
-npm run build
+# Initialize environment
+cp .env.example .env
+```
 
-# Option 1: Run with Web Dashboard (Recommended)
-# Terminal 1: Backend Server
+### 3. Build the Protocol
+```bash
+npm run build
+```
+
+### 4. Launch the Ecosystem
+
+**Option A: Full Dashboard (Recommended)**
+```bash
+# Terminal 1: Launch Backend API & WebSocket Server
 npm run start:server
 
-# Terminal 2: Frontend Dashboard
+# Terminal 2: Launch Luminance Studio Frontend
 cd frontend
 npm install
 npm run dev
+```
 
-# Option 2: CLI Demo
-# Build and run the TUI version
-npm run build
+**Option B: CLI Demo**
+```bash
+# Execute the 3-agent autonomous workflow
 npm run demo
 ```
 
-## Configuration
+---
 
-Copy `.env.example` to `.env`:
+## 🛠️ Configuration (.env)
 
-```bash
-# Required for live Gemini AI
-GEMINI_API_KEY=your_gemini_api_key
+| Variable | Description | Required |
+| --- | --- | --- |
+| `GEMINI_API_KEY` | API Key for Gemini 1.5 Flash integration. | Yes |
+| `MIDNIGHT_DEPLOYED_ADDRESS` | Address of the contract on Midnight Testnet. | No (Local mode enabled) |
+| `PORT` | Port for the Backend Server (Default: 3001). | No |
 
-# For real Midnight testnet deployment:
-# 1. Get testnet tokens: https://faucet.preprod.midnight.network/
-# 2. Set your deployed contract address:
-MIDNIGHT_DEPLOYED_ADDRESS=0x...
-```
+---
 
-## Features
+## 📦 Project Structure
 
-### ✅ Implemented
-
-1. **Smart Contract** (`contracts/BlindSwarm.ts`)
-   - AgentRegistry - Register/deregister agents with stake
-   - TaskRegistry - DAG-based task management with escrow
-   - DisputeRegistry - Resolution with selective disclosure
-
-2. **Cryptography** (`src/crypto/`)
-   - Ed25519 signatures (real @noble/ed25519)
-   - SHA256 hashing
-   - ECDH key exchange for agent-to-agent encryption
-
-3. **AI Integration** (`src/adapters/`)
-   - Gemini 2.5 Flash with structured prompts
-   - Mock adapter for testing
-   - Automatic fallback on API failure
-
-4. **Demo** (`src/demo/`)
-   - 3-agent workflow: Market → Risk → Compliance
-   - Real cryptographic attestations
-   - TUI visualization
-
-## Deploy to Midnight Testnet
-
-### Prerequisites
-
-1. **Docker** - Running for proof server
-2. **Testnet Tokens** - Get from https://faucet.preprod.midnight.network/
-
-### Steps
-
-```bash
-# 1. Start proof server (separate terminal)
-npm run start-proof-server
-
-# 2. Build
-npm run build
-
-# 3. Deploy to testnet
-npm run deploy
-
-# This will:
-# - Create or restore wallet
-# - Request testnet tokens
-# - Register for DUST (gas)
-# - Deploy contract
-# - Save address to deployment.json
-```
-
-### After Deployment
-
-Set the address in `.env`:
-
-```bash
-MIDNIGHT_DEPLOYED_ADDRESS=0xyour_contract_address
-```
-
-Now run with real network:
-
-```bash
-npm run demo
-```
-
-## Project Structure
-
-```
-blindswarm/
-├── contracts/           # Midnight Compact contracts
-│   └── BlindSwarm.ts
+```text
+luminance/
+├── contracts/           # Midnight Compact Logic (Privacy-preserving DDL)
 ├── src/
-│   ├── adapters/        # AI adapters (Gemini, Mock)
-│   ├── agents/         # AgentNode runtime
-│   ├── client/         # Midnight client
-│   ├── crypto/         # Ed25519, ECDH, SHA256
-│   ├── demo/           # 3-agent demo
-│   ├── midnight/       # SDK utilities
-│   ├── orchestrator/   # DAG validation, escrow
-│   ├── storage/        # Persistent storage
-│   ├── tui/           # Terminal dashboard
-│   ├── types/          # Shared type definitions
-│   └── server.ts       # Backend API & WebSocket Server
-├── frontend/           # Luminance Studio React/Vite App
-│   ├── src/
-│   │   ├── App.tsx     # Dashboard logic
-│   │   └── index.css   # Premium design system
-├── .env               # API keys
-└── package.json
+│   ├── adapters/        # AI Service Adapters (Gemini, OpenSource, Mock)
+│   ├── agents/         # AgentNode Runtime & Identity Management
+│   ├── client/         # Midnight SDK JS Client
+│   ├── crypto/         # Cryptographic Primitives (Ed25519, ECDH, AES)
+│   ├── orchestrator/   # DAG Workflow Engine & Escrow Logic
+│   ├── tui/           # Terminal User Interface Dashboard
+│   └── server.ts       # Express + WebSocket Real-time API
+└── frontend/           # Luminance Studio (React/Vite Visualizer)
 ```
 
-## Hackathon Judges - What Makes This Special
+---
 
-### Novel Features
+## ⚖️ Smart Contract Suite
 
-1. **Cryptographic Agent Identity**
-   - Each AI agent has real Ed25519 keypair
-   - Signs execution outputs
-   - Verifiable on-chain
+The core protocol is governed by three primary registries implemented in Compact:
 
-2. **Privacy-Preserving Communication**
-   - ECDH key exchange between agents
-   - AES-256-GCM encryption
-   - Intermediate data stays private
+1.  **AgentRegistry**: Manages agent stake, capabilities, and cryptographic identity.
+2.  **TaskRegistry**: Handles asynchronous DAG task assignment and ZK state updates.
+3.  **DisputeRegistry**: Provides a mechanism for selective data disclosure in case of execution failure.
 
-3. **Selective Disclosure**
-   - Dispute resolution without revealing full data
-   - ZK-ready contract structure
+---
 
-4. **Real Midnight Integration**
-   - Uses official @midnight-ntwrk SDKs
-   - Proper wallet with shielded/unshielded/DUST
-   - ZK proof generation via proof server
+## 🎨 Luminance Studio
 
-### Demo Output
+The **Luminance Studio** is a premium web dashboard that provides real-time visibility into the swarm.
+- **Live Pipeline Visualization**: Watch agents pass encrypted data in real-time.
+- **Cryptographic Verification**: Inspection tools for Ed25519 signatures.
+- **Network Status**: Real-time stats from the Midnight Layer.
 
-```
-Step 1: Market Analysis → "NEUTRAL" (confidence: 85%)
-         Output Hash: a3f2b8... 
-         Ed25519 Signature: 8a7c3d...
+---
 
-Step 2: Risk Analysis → "HIGH risk" (confidence: 85%)
-         Output Hash: 4d9e2a...
-         Ed25519 Signature: 1b6c8f...
+## 🤝 Contributing
 
-Step 3: Compliance → "NEEDS_REVIEW" (confidence: 85%)
-         Output Hash: 7f1c4b...
-         Ed25519 Signature: 9a2d5e...
-```
+We welcome contributions to the Luminance Protocol! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-## API Reference
+## 📄 License
 
-### CLI Commands
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```bash
-blindswarm --help
-blindswarm demo --run
-blindswarm register-agent --capabilities market_analysis,risk_analysis
-blindswarm create-task --dag '{"steps":[...]}'
-blindswarm task-status --task-id xxx
-```
+---
 
-### Programmatic
-
-```typescript
-import { createClient } from 'blindswarm';
-import { createGeminiAdapter } from 'blindswarm';
-import { generateKeyPair, sign } from 'blindswarm';
-
-// Create client
-const client = await createClient({
-  providerUrl: 'https://testnet.midnight.network',
-  walletPrivateKey: '...',
-});
-
-// Generate agent keys
-const { publicKey, privateKey } = generateKeyPair();
-
-// Sign attestation
-const signature = sign(payload, privateKey);
-```
-
-## License
-
-MIT
+<p align="center">
+  Built with ❤️ for the Midnight Hackathon.
+</p>

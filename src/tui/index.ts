@@ -15,8 +15,8 @@ export class Dashboard {
     this.running = true;
     console.log('\n');
     console.log('╔════════════════════════════════════════════════════════════╗');
-    console.log('║          🎮 Gaming Studio Multi-Agent System                ║');
-    console.log('║              AI-Powered Game Development                   ║');
+    console.log('║               🌟 LUMINANCE Protocol                        ║');
+    console.log('║           Privacy-Preserving AI Orchestration               ║');
     console.log('╚═══════════════════════════════════════════════════════════╝');
     console.log('\n');
   }
@@ -32,13 +32,13 @@ export class Dashboard {
     console.clear();
     console.log('\n');
     console.log('╔════════════════════════════════════════════════════════════╗');
-    console.log('║          🎮 Gaming Studio Multi-Agent System                ║');
-    console.log('║              AI-Powered Game Development                   ║');
+    console.log('║               🌟 LUMINANCE Protocol                        ║');
+    console.log('║           Privacy-Preserving AI Orchestration               ║');
     console.log('╚═══════════════════════════════════════════════════════════╝');
     console.log('\n');
 
     console.log('┌─────────────────────────────────────────────────────────────┐');
-    console.log('│                  4-AGENT GAME DEV TEAM                     │');
+    console.log('│                  AUTONOMOUS PRIVACY SWARM                  │');
     console.log('├─────────────────────────────────────────────────────────────┤');
     console.log('│                                                             │');
     console.log('│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌────┐│');

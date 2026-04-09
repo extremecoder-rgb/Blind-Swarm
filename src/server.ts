@@ -51,7 +51,7 @@ const wss = new WebSocketServer({ server });
 
 wss.on('connection', (ws) => {
   console.log('Client connected to WebSocket.');
-  ws.send(JSON.stringify({ message: '🔗 Connected to Midnight DeFi Pipeline...' }));
+  ws.send(JSON.stringify({ message: '🔗 Connected to LUMINANCE Protocol...' }));
 });
 
 server.listen(PORT, () => {

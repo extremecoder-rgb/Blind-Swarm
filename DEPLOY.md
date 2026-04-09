@@ -1,4 +1,4 @@
-# BlindSwarm - Midnight Testnet Deployment Guide
+# LUMINANCE - Midnight Testnet Deployment Guide
 
 ## Prerequisites
 
@@ -113,7 +113,7 @@ To connect to real testnet, replace the mock client in `src/client/index.ts` wit
 
 ```
 ╔════════════════════════════════════════════════════════════╗
-║          BlindSwarm - Multi-Agent Orchestration            ║
+║            LUMINANCE - Multi-Agent Orchestration            ║
 ║              Privacy-Preserving AI Protocol               ║
 ╚════════════════════════════════════════════════════════════╝
 
